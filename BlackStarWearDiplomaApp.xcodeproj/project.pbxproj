@@ -3,19 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B79E35614A0B475996DFB55A /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */; };
 		F7B89F9023B6986400F3F87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89F8F23B6986400F3F87F /* AppDelegate.swift */; };
 		F7B89F9223B6986400F3F87F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89F9123B6986400F3F87F /* SceneDelegate.swift */; };
 		F7B89F9423B6986400F3F87F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89F9323B6986400F3F87F /* ViewController.swift */; };
 		F7B89F9723B6986400F3F87F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B89F9523B6986400F3F87F /* Main.storyboard */; };
 		F7B89F9923B6986B00F3F87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B89F9823B6986B00F3F87F /* Assets.xcassets */; };
 		F7B89F9C23B6986B00F3F87F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B89F9A23B6986B00F3F87F /* LaunchScreen.storyboard */; };
+		F7B89FA423B69D2400F3F87F /* CategoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */; };
+		F7B89FA623B69D7A00F3F87F /* JSONStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWearDiplomaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C1B5E8E0F53A3818073E24 /* Pods-BlackStarWearDiplomaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWearDiplomaApp.debug.xcconfig"; path = "Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AD3DC5546B2CFCCB8BBD1D43 /* Pods-BlackStarWearDiplomaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWearDiplomaApp.release.xcconfig"; path = "Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp.release.xcconfig"; sourceTree = "<group>"; };
 		F7B89F8C23B6986400F3F87F /* BlackStarWearDiplomaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackStarWearDiplomaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B89F8F23B6986400F3F87F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7B89F9123B6986400F3F87F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		F7B89F9823B6986B00F3F87F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7B89F9B23B6986B00F3F87F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7B89F9D23B6986B00F3F87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesLoader.swift; sourceTree = "<group>"; };
+		F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStructure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79E35614A0B475996DFB55A /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B8E898891E76DA6932D3A0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		521E164717129B1CB2887976 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29C1B5E8E0F53A3818073E24 /* Pods-BlackStarWearDiplomaApp.debug.xcconfig */,
+				AD3DC5546B2CFCCB8BBD1D43 /* Pods-BlackStarWearDiplomaApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F7B89F8323B6986400F3F87F = {
 			isa = PBXGroup;
 			children = (
 				F7B89F8E23B6986400F3F87F /* BlackStarWearDiplomaApp */,
 				F7B89F8D23B6986400F3F87F /* Products */,
+				521E164717129B1CB2887976 /* Pods */,
+				1B8E898891E76DA6932D3A0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +87,8 @@
 				F7B89F8F23B6986400F3F87F /* AppDelegate.swift */,
 				F7B89F9123B6986400F3F87F /* SceneDelegate.swift */,
 				F7B89F9323B6986400F3F87F /* ViewController.swift */,
+				F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */,
+				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
 				F7B89F9523B6986400F3F87F /* Main.storyboard */,
 				F7B89F9823B6986B00F3F87F /* Assets.xcassets */,
 				F7B89F9A23B6986B00F3F87F /* LaunchScreen.storyboard */,
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7B89FA023B6986B00F3F87F /* Build configuration list for PBXNativeTarget "BlackStarWearDiplomaApp" */;
 			buildPhases = (
+				735DA61DCBC89CD59276D992 /* [CP] Check Pods Manifest.lock */,
 				F7B89F8823B6986400F3F87F /* Sources */,
 				F7B89F8923B6986400F3F87F /* Frameworks */,
 				F7B89F8A23B6986400F3F87F /* Resources */,
+				B6BD9894DB1F58C25BA70C4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +165,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		735DA61DCBC89CD59276D992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlackStarWearDiplomaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BD9894DB1F58C25BA70C4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7B89F8823B6986400F3F87F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +214,9 @@
 			files = (
 				F7B89F9423B6986400F3F87F /* ViewController.swift in Sources */,
 				F7B89F9023B6986400F3F87F /* AppDelegate.swift in Sources */,
+				F7B89FA423B69D2400F3F87F /* CategoriesLoader.swift in Sources */,
 				F7B89F9223B6986400F3F87F /* SceneDelegate.swift in Sources */,
+				F7B89FA623B69D7A00F3F87F /* JSONStructure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +358,7 @@
 		};
 		F7B89FA123B6986B00F3F87F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29C1B5E8E0F53A3818073E24 /* Pods-BlackStarWearDiplomaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +376,7 @@
 		};
 		F7B89FA223B6986B00F3F87F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3DC5546B2CFCCB8BBD1D43 /* Pods-BlackStarWearDiplomaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
