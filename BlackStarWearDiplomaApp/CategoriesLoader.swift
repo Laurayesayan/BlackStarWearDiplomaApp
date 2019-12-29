@@ -10,18 +10,21 @@ import Foundation
 import Alamofire
 
 class CategoriesLoader {
-    func loadCategories() {
+    func loadCategories(getLoadedCategories: @escaping ([Categories]) -> Void) {
         AF.request("http://blackstarshop.ru/index.php?route=api/v1/categories").responseJSON {
             response in
             if let json = response.value,
                 let jsonDict = json as? NSDictionary {
                 var categoriesList: [Categories] = []
-                if let categories = Categories(data: jsonDict) {
-                    categoriesList.append(categories)
+                for (_, data) in jsonDict {
+                    if let categories = Categories(data: data as! NSDictionary) {
+                        categoriesList.append(categories)
+                    }
                 }
-                
-                print(categoriesList.count)
-//                print(categoriesList[0].iconImage)
+
+                DispatchQueue.main.async {
+                    getLoadedCategories(categoriesList)
+                }
             }
         }
     }
