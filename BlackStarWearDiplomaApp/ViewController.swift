@@ -23,7 +23,11 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return self.categories.count
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
     }
@@ -32,12 +36,18 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell") as! CategoriesTableViewCell
         
         cell.titleLabel.text = categories[indexPath.row].name
+//        cell.titleLabel.text = categories[indexPath.section].name
         
         let url = URL(string: "http://blackstarshop.ru/\(categories[indexPath.row].iconImage)")
+//        let url = URL(string: "http://blackstarshop.ru/\(categories[indexPath.section].iconImage)")
         let data = try? Data(contentsOf: url!)
         cell.categoriesImage.image = UIImage(data: data!)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowSubcategories", sender: nil)
     }
     
     
