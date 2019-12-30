@@ -12,21 +12,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var categoriesTableView: UITableView!
     var categories: [Categories] = []
+    var selectedRow = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         CategoriesLoader().loadCategories { categories in
             self.categories = categories
             self.categoriesTableView.reloadData()
         }
     }
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return self.categories.count
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
@@ -36,19 +35,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell") as! CategoriesTableViewCell
         
         cell.titleLabel.text = categories[indexPath.row].name
-//        cell.titleLabel.text = categories[indexPath.section].name
         
         let url = URL(string: "http://blackstarshop.ru/\(categories[indexPath.row].iconImage)")
-//        let url = URL(string: "http://blackstarshop.ru/\(categories[indexPath.section].iconImage)")
+             
         let data = try? Data(contentsOf: url!)
         cell.categoriesImage.image = UIImage(data: data!)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowSubcategories", sender: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let subcategoriesController = segue.destination as? SubcategoriesViewController, segue.identifier == "ShowSubcategories" {
+            subcategoriesController.subcategories = self.categories[selectedRow]
+        }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "ShowSubcategories", sender: indexPath)
+    }
     
 }
