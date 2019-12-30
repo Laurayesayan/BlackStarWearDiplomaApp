@@ -28,6 +28,10 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-cA-gNu">
                                                     <rect key="frame" x="16" y="12" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="2lS-iz-gWp"/>
+                                                        <constraint firstAttribute="width" constant="56" id="bAh-xP-7xT"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAX-L6-imV">
                                                     <rect key="frame" x="88" y="32" width="232" height="16"/>
@@ -46,7 +50,6 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ok8-cA-gNu" firstAttribute="top" secondItem="DG6-rF-aWc" secondAttribute="topMargin" constant="1" id="5OZ-Y6-93f"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ok8-cA-gNu" secondAttribute="bottom" constant="1" id="9ea-5C-LHb"/>
                                                 <constraint firstItem="uAX-L6-imV" firstAttribute="top" secondItem="DG6-rF-aWc" secondAttribute="topMargin" constant="21" id="DFG-Km-nke"/>
                                                 <constraint firstItem="ok8-cA-gNu" firstAttribute="leading" secondItem="DG6-rF-aWc" secondAttribute="leadingMargin" constant="1" id="Kka-9b-M8G"/>
@@ -106,26 +109,34 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="itN-HC-FEr">
                                                     <rect key="frame" x="16" y="12" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="0dd-BU-Jgq"/>
+                                                        <constraint firstAttribute="width" constant="56" id="Ldm-aE-uuD"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4h-9E-74A">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4h-9E-74A">
                                                     <rect key="frame" x="88" y="32" width="232" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="I5H-WX-vbL"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="nzd-l9-f3E"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="YPY-eA-neR"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <font key="NSFont" size="16" name="SFProDisplay-Medium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" maximumLineHeight="19" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="itN-HC-FEr" secondAttribute="bottom" constant="1" id="3kU-RQ-mUk"/>
-                                                <constraint firstItem="O4h-9E-74A" firstAttribute="top" secondItem="2Yc-qy-s2b" secondAttribute="topMargin" constant="21" id="8be-qf-4bk"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="O4h-9E-74A" secondAttribute="bottom" constant="21" id="nbU-wu-Oe1"/>
-                                                <constraint firstItem="itN-HC-FEr" firstAttribute="top" secondItem="2Yc-qy-s2b" secondAttribute="topMargin" constant="1" id="oFq-MN-lb7"/>
-                                                <constraint firstItem="itN-HC-FEr" firstAttribute="leading" secondItem="2Yc-qy-s2b" secondAttribute="leadingMargin" constant="1" id="rHU-Pa-XLA"/>
-                                                <constraint firstItem="O4h-9E-74A" firstAttribute="leading" secondItem="itN-HC-FEr" secondAttribute="trailing" constant="16" id="rQD-zt-BRo"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="O4h-9E-74A" secondAttribute="trailing" constant="21" id="xuN-mq-WIU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="O4h-9E-74A" secondAttribute="bottom" constant="21" id="8JD-8d-VZ4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="itN-HC-FEr" secondAttribute="bottom" constant="1" id="Ghz-oq-niz"/>
+                                                <constraint firstItem="O4h-9E-74A" firstAttribute="leading" secondItem="itN-HC-FEr" secondAttribute="trailing" constant="16" id="SWb-xn-PsY"/>
+                                                <constraint firstItem="O4h-9E-74A" firstAttribute="top" secondItem="2Yc-qy-s2b" secondAttribute="topMargin" constant="21" id="YAM-Hk-Bez"/>
+                                                <constraint firstItem="itN-HC-FEr" firstAttribute="leading" secondItem="2Yc-qy-s2b" secondAttribute="leadingMargin" constant="1" id="caj-9B-xJA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="O4h-9E-74A" secondAttribute="trailing" constant="21" id="qE8-B3-BzI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -156,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yae-ge-vGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="92"/>
+            <point key="canvasLocation" x="900" y="88"/>
         </scene>
     </scenes>
 </document>

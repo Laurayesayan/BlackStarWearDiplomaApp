@@ -12,11 +12,11 @@ class SubcategoriesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var subcategoriesImageView: UIImageView!
     
-    
     @IBOutlet weak var subcategoriesTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//        self.subcategoriesImageView.layer.cornerRadius =  self.subcategoriesImageView.frame.width / 2
 
     }
 
