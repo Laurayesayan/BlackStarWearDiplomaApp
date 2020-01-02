@@ -10,7 +10,10 @@ import UIKit
 
 class SubcategoriesViewController: UIViewController {
     
+    var selectedID = String()
+    
     @IBOutlet weak var subcategoriesTableView: UITableView!
+    @IBOutlet weak var navigationItemTitle: UINavigationItem!
     
     var subcategories = Categories()
     
@@ -29,6 +32,8 @@ extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = subcategoriesTableView.dequeueReusableCell(withIdentifier: "SubcategoriesCell") as! SubcategoriesTableViewCell
         
         cell.subcategoriesTitle.text = self.subcategories.subcategories[indexPath.row].name
+        
+        self.navigationItemTitle.title = self.subcategories.name
             
         if !self.subcategories.subcategories[indexPath.row].iconImage.isEmpty {
             let url = URL(string: "http://blackstarshop.ru/\(self.subcategories.subcategories[indexPath.row].iconImage)")
@@ -40,6 +45,18 @@ extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productsController = segue.destination as? ProductsListViewController, segue.identifier == "ShowProductsList" {
+            productsController.id = self.selectedID
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        subcategoriesTableView.deselectRow(at: indexPath, animated: true)
+        selectedID = self.subcategories.subcategories[indexPath.row].id
+        performSegue(withIdentifier: "ShowProductsList", sender: indexPath)
     }
     
 }

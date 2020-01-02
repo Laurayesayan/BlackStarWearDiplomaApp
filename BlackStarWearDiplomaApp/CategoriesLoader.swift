@@ -29,6 +29,26 @@ class CategoriesLoader {
         }
     }
     
+    func loadProductsList(id: String, getLoadedProductsList: @escaping ([ProductsList]) -> Void) {
+        AF.request("http://blackstarshop.ru/index.php?route=api/v1/products&cat_id=\(id)").responseJSON {
+            response in
+            if let json = response.value,
+                let jsonDict = json as? NSDictionary {
+                var productsList: [ProductsList] = []
+                for (_, data) in jsonDict {
+                    if let products = ProductsList(data: data as! NSDictionary) {
+                        productsList.append(products)
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    getLoadedProductsList(productsList)
+                }
+            }
+        }
+    }
+}
+    
 //    func loadSubcategories(getLoadedSubcategories: @escaping ([Subcategories]) -> Void) {
 //        AF.request("http://blackstarshop.ru/index.php?route=api/v1/categories").responseJSON {
 //            response in
@@ -55,4 +75,4 @@ class CategoriesLoader {
 //        }
 //
 //    }
-}
+

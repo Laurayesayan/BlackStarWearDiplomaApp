@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B79E35614A0B475996DFB55A /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */; };
+		F73D6D1E23BE2942004D80FD /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */; };
+		F73D6D2023BE323C004D80FD /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */; };
 		F771D32323B9DC1900D5185F /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771D32223B9DC1900D5185F /* SubcategoriesViewController.swift */; };
 		F771D32523B9E32600D5185F /* SubcategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771D32423B9E32600D5185F /* SubcategoriesTableViewCell.swift */; };
 		F7B89F9023B6986400F3F87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89F8F23B6986400F3F87F /* AppDelegate.swift */; };
@@ -25,6 +27,8 @@
 		21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWearDiplomaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C1B5E8E0F53A3818073E24 /* Pods-BlackStarWearDiplomaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWearDiplomaApp.debug.xcconfig"; path = "Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AD3DC5546B2CFCCB8BBD1D43 /* Pods-BlackStarWearDiplomaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWearDiplomaApp.release.xcconfig"; path = "Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp.release.xcconfig"; sourceTree = "<group>"; };
+		F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
+		F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F771D32223B9DC1900D5185F /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
 		F771D32423B9E32600D5185F /* SubcategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		F7B89F8C23B6986400F3F87F /* BlackStarWearDiplomaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackStarWearDiplomaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,8 @@
 				F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */,
 				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
 				F7B89F9523B6986400F3F87F /* Main.storyboard */,
+				F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */,
+				F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */,
 				F771D32423B9E32600D5185F /* SubcategoriesTableViewCell.swift */,
 				F7B89FA723B739B800F3F87F /* CategoriesTableViewCell.swift */,
 				F7B89F9823B6986B00F3F87F /* Assets.xcassets */,
@@ -227,8 +233,10 @@
 				F7B89FA423B69D2400F3F87F /* CategoriesLoader.swift in Sources */,
 				F771D32523B9E32600D5185F /* SubcategoriesTableViewCell.swift in Sources */,
 				F7B89F9223B6986400F3F87F /* SceneDelegate.swift in Sources */,
+				F73D6D2023BE323C004D80FD /* ProductsCollectionViewCell.swift in Sources */,
 				F7B89FA623B69D7A00F3F87F /* JSONStructure.swift in Sources */,
 				F7B89FA823B739B800F3F87F /* CategoriesTableViewCell.swift in Sources */,
+				F73D6D1E23BE2942004D80FD /* ProductsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

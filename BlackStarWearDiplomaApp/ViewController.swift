@@ -22,7 +22,6 @@ class ViewController: UIViewController {
             self.categoriesTableView.reloadData()
         }
     }
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -52,6 +51,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRow = indexPath.row
+        categoriesTableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "ShowSubcategories", sender: indexPath)
     }
     

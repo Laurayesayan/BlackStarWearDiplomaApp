@@ -79,3 +79,30 @@ struct Categories {
     }
 
 }
+
+struct ProductsList {
+    let name: String
+    //    let englishName: String
+    //    let sortOrder: String
+    //    let article: String
+    let description: String
+    let colorImageURL: String
+    let mainImage: String
+    let price: String
+    
+    init?(data: NSDictionary) {
+        guard let name = data["name"] as? String,
+            let description = data["description"] as? String,
+            let colorImageURL = data["colorImageURL"] as? String,
+            let mainImage = data["mainImage"] as? String,
+            let price = data["price"] as? String else {
+                return nil
+        }
+        
+        self.name = name
+        self.description = description
+        self.colorImageURL = colorImageURL
+        self.mainImage = mainImage
+        self.price = price
+    }
+}
