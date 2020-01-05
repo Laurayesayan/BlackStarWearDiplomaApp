@@ -17,5 +17,13 @@ UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     
     @IBOutlet weak var priceLabel: UILabel!
-
+    
+    @IBOutlet weak var buyButtonRectangle: UIView!
+    override func layoutSubviews() {
+        self.buyButtonRectangle.layer.cornerRadius = 5
+    }
+    
+//    func showProductCard() {
+//        performSegue(withIdentifier: "ShowProductCard", sender: Any.self)
+//    }
 }

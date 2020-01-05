@@ -265,7 +265,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dS-cN-gCJ">
                                                                     <rect key="frame" x="81" y="4" width="70" height="25"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adP-L6-EvS">
+                                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adP-L6-EvS">
                                                                             <rect key="frame" x="0.0" y="4" width="70" height="18"/>
                                                                             <attributedString key="attributedText">
                                                                                 <fragment content="КУПИТЬ">
@@ -278,7 +278,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="0.85298052226027399" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.89803921568627454" green="0.39147520070000003" blue="0.5019572377" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="adP-L6-EvS" secondAttribute="bottom" constant="3" id="6fx-ys-ihU"/>
                                                                         <constraint firstItem="adP-L6-EvS" firstAttribute="top" secondItem="7dS-cN-gCJ" secondAttribute="top" constant="4" id="DxF-NS-2dH"/>
@@ -325,6 +325,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="184" height="290"/>
                                         <connections>
+                                            <outlet property="buyButtonRectangle" destination="7dS-cN-gCJ" id="okx-ob-wVg"/>
                                             <outlet property="descriptionLabel" destination="PPW-cF-QLR" id="yKb-hT-Epe"/>
                                             <outlet property="priceLabel" destination="zoG-BY-I18" id="tMI-6N-RTF"/>
                                             <outlet property="productImage" destination="9KO-iW-rTO" id="ooj-YX-MEK"/>
@@ -350,11 +351,35 @@
                     <navigationItem key="navigationItem" id="yjq-Q2-avl"/>
                     <connections>
                         <outlet property="productsCollectionView" destination="jF3-rJ-y38" id="YyE-AC-kHL"/>
+                        <segue destination="zbt-0s-Ai1" kind="showDetail" identifier="ShowProductCard" id="QLL-V9-AYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te4-jU-MYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="86.806596701649184"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ig0-wW-rR1">
+            <objects>
+                <viewController id="zbt-0s-Ai1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8fG-aN-lag">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-Gn-oAU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Obe-A6-HU1"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="TnS-U7-GrD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqx-s3-9M8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477.5999999999999" y="87.706146926536732"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="edm-eO-744">

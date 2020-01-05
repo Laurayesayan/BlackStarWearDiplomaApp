@@ -53,4 +53,8 @@ extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UIColl
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowProductCard", sender: indexPath)
+    }
+    
 }
