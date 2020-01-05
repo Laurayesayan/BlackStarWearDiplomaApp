@@ -24,6 +24,11 @@ class ProductsListViewController: UIViewController {
 }
 
 extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let w = UIScreen.main.bounds.size.width / 2
+        return CGSize(width: w, height: w)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productsList.count
     }
@@ -32,7 +37,13 @@ extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductsCell", for: indexPath) as! ProductsCollectionViewCell
 
         cell.titleLabel.text = productsList[indexPath.row].name
-        cell.priceLabel.text = productsList[indexPath.row].price //.filter {$0 != "."}
+        cell.descriptionLabel.text = productsList[indexPath.row].description
+        let doublePrice = Double(productsList[indexPath.row].price)
+        let newStringPrice = String(doublePrice!)
+        cell.priceLabel.text = newStringPrice
+//        var test = NSString(string: productsList[indexPath.row].price)
+//        cell.priceLabel.text = NSString(format: "%.2f", test) as String
+        //.filter {$0 != "."}
 
         let url = URL(string: "http://blackstarshop.ru/\(productsList[indexPath.row].mainImage)")
 
@@ -40,11 +51,6 @@ extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UIColl
         cell.productImage.image = UIImage(data: data!)
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let w = UIScreen.main.bounds.size.width / 2
-        return CGSize(width: w, height: w)
     }
     
 }
