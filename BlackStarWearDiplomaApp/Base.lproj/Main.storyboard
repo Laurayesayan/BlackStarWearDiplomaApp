@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuI-ep-eme">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,29 +13,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlackStarWearDiplomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MmU-AV-wZY">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoriesCell" rowHeight="80" id="l5f-B7-Ixe" customClass="CategoriesTableViewCell" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l5f-B7-Ixe" id="DG6-rF-aWc">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-cA-gNu">
-                                                    <rect key="frame" x="16" y="12" width="56" height="56"/>
+                                                    <rect key="frame" x="21" y="12" width="56" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="56" id="2lS-iz-gWp"/>
                                                         <constraint firstAttribute="width" constant="56" id="bAh-xP-7xT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAX-L6-imV">
-                                                    <rect key="frame" x="88" y="32" width="232" height="16"/>
+                                                    <rect key="frame" x="93" y="32" width="261" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="FNa-dF-cs0"/>
                                                     </constraints>
@@ -95,29 +95,29 @@
             <objects>
                 <viewController id="zyu-5N-30M" customClass="SubcategoriesViewController" customModule="BlackStarWearDiplomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="83V-2o-ikE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-z7-eA2">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubcategoriesCell" rowHeight="80" id="g2n-fc-YY4" customClass="SubcategoriesTableViewCell" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g2n-fc-YY4" id="2Yc-qy-s2b">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="itN-HC-FEr">
-                                                    <rect key="frame" x="16" y="12" width="56" height="56"/>
+                                                    <rect key="frame" x="21" y="12" width="56" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="56" id="0dd-BU-Jgq"/>
                                                         <constraint firstAttribute="width" constant="56" id="Ldm-aE-uuD"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4h-9E-74A">
-                                                    <rect key="frame" x="88" y="32" width="232" height="16"/>
+                                                    <rect key="frame" x="93" y="32" width="261" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="YPY-eA-neR"/>
                                                     </constraints>
@@ -178,11 +178,11 @@
             <objects>
                 <viewController id="3G1-9x-C6d" customClass="ProductsListViewController" customModule="BlackStarWearDiplomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zV3-wY-oPC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jF3-rJ-y38">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQ5-hv-KdP">
                                     <size key="itemSize" width="199" height="290"/>
@@ -192,7 +192,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductsCell" id="CIy-oS-bPZ" customClass="ProductsCollectionViewCell" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
-                                        <rect key="frame" x="95.5" y="0.0" width="184" height="290"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="290"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5N9-tH-vsU">
                                             <rect key="frame" x="0.0" y="0.0" width="184" height="290"/>
@@ -351,35 +351,63 @@
                     <navigationItem key="navigationItem" id="yjq-Q2-avl"/>
                     <connections>
                         <outlet property="productsCollectionView" destination="jF3-rJ-y38" id="YyE-AC-kHL"/>
-                        <segue destination="zbt-0s-Ai1" kind="showDetail" identifier="ShowProductCard" id="QLL-V9-AYo"/>
+                        <segue destination="zbt-0s-Ai1" kind="show" identifier="ShowProductCard" id="QLL-V9-AYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te4-jU-MYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="86.806596701649184"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Card View Controller-->
         <scene sceneID="ig0-wW-rR1">
             <objects>
-                <viewController id="zbt-0s-Ai1" sceneMemberID="viewController">
+                <viewController id="zbt-0s-Ai1" customClass="ProductCardViewController" customModule="BlackStarWearDiplomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8fG-aN-lag">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-Gn-oAU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-Gn-oAU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="319"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13h-rN-OYr">
+                                        <rect key="frame" x="0.0" y="-7.5" width="414" height="334"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-LW-LvR">
+                                        <rect key="frame" x="20" y="277" width="374" height="37"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.35320654509999999" green="0.77095419170000001" blue="0.38030150530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </pageControl>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Qbj-LW-LvR" secondAttribute="bottom" constant="5" id="1eh-d1-ciK"/>
+                                    <constraint firstItem="13h-rN-OYr" firstAttribute="width" secondItem="TdE-Gn-oAU" secondAttribute="width" multiplier="0.797333" constant="83.903999999999996" id="3OA-Yl-xHx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qbj-LW-LvR" secondAttribute="trailing" constant="20" id="3j3-x7-aIG"/>
+                                    <constraint firstItem="13h-rN-OYr" firstAttribute="centerX" secondItem="TdE-Gn-oAU" secondAttribute="centerX" id="Cwc-qv-tzX"/>
+                                    <constraint firstItem="13h-rN-OYr" firstAttribute="centerY" secondItem="TdE-Gn-oAU" secondAttribute="centerY" id="gMC-Do-xYL"/>
+                                    <constraint firstItem="Qbj-LW-LvR" firstAttribute="leading" secondItem="TdE-Gn-oAU" secondAttribute="leading" constant="20" id="rjY-d9-VWa"/>
+                                    <constraint firstItem="13h-rN-OYr" firstAttribute="height" secondItem="TdE-Gn-oAU" secondAttribute="height" multiplier="0.585014" constant="147.48991354466858" id="x91-Yw-CSc"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="TdE-Gn-oAU" secondAttribute="bottom" constant="455" id="15B-tk-wbs"/>
+                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="O1J-5P-18v"/>
+                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="top" secondItem="Obe-A6-HU1" secondAttribute="top" id="PQo-6n-oQ6"/>
+                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="trailing" secondItem="Obe-A6-HU1" secondAttribute="trailing" id="RKs-vM-6tz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Obe-A6-HU1"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="TnS-U7-GrD"/>
+                    <connections>
+                        <outlet property="productImageView" destination="13h-rN-OYr" id="4yt-Nh-gwm"/>
+                        <outlet property="productImagesPageControl" destination="Qbj-LW-LvR" id="CIT-Gn-Ion"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqx-s3-9M8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3477.5999999999999" y="87.706146926536732"/>
+            <point key="canvasLocation" x="3476.811594202899" y="87.053571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="edm-eO-744">
@@ -387,7 +415,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuI-ep-eme" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E9J-sd-Ulu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
