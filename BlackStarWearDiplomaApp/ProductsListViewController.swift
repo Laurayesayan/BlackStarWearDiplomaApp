@@ -12,6 +12,7 @@ class ProductsListViewController: UIViewController {
 
     @IBOutlet weak var productsCollectionView: UICollectionView!
     var id = String()
+    var index = Int()
     var productsList: [ProductsList] = []
     
     override func viewDidLoad() {
@@ -53,7 +54,14 @@ extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UIColl
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productCard = segue.destination as? ProductCardViewController, segue.identifier == "ShowProductCard" {
+            productCard.product =  self.productsList[index]
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.index = indexPath.row
         performSegue(withIdentifier: "ShowProductCard", sender: indexPath)
     }
     

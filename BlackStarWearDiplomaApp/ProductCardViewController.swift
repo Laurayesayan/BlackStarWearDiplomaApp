@@ -14,36 +14,35 @@ class ProductCardViewController: UIViewController {
     
     @IBOutlet weak var productImagesPageControl: UIPageControl!
 
-    private var currentImage = String()
-    private var currentImageIndex = Int()
+    var product = ProductsList()
+
     
-    var sizeAndColorView = UIView()
+//    private var currentImage = String()
+//    private var currentImageIndex = Int()
+    //    var sizeAndColorView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        leftSwipe.direction = .left
-        
-        view.addGestureRecognizer(rightSwipe)
-        view.addGestureRecognizer(leftSwipe)
+        print(self.product.name)
         
 //        productImagesPageControl.numberOfPages = 5
     }
     
-    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
-        if sender.state == .ended {
-            if sender.direction == .left {
-                self.productImageView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
-                productImagesPageControl.currentPage += 1
-            } else {
-                self.productImageView.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-                productImagesPageControl.currentPage -= 1
-            }
-        }
+    @IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
+        self.productImageView.image = UIImage(imageLiteralResourceName: "NON")
+        productImagesPageControl.currentPage -= 1
     }
+    
+    @IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
+        self.productImageView.image = UIImage(imageLiteralResourceName: "backArrow")
+        productImagesPageControl.currentPage += 1
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        print("We were really touched")
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 
 

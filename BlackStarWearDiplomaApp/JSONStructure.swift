@@ -105,4 +105,12 @@ struct ProductsList {
         self.mainImage = mainImage
         self.price = price
     }
+    
+    init() {
+        self.name = ""
+        self.description = ""
+        self.colorImageURL = ""
+        self.mainImage = ""
+        self.price = ""
+    }
 }

@@ -351,7 +351,7 @@
                     <navigationItem key="navigationItem" id="yjq-Q2-avl"/>
                     <connections>
                         <outlet property="productsCollectionView" destination="jF3-rJ-y38" id="YyE-AC-kHL"/>
-                        <segue destination="zbt-0s-Ai1" kind="show" identifier="ShowProductCard" id="QLL-V9-AYo"/>
+                        <segue destination="zbt-0s-Ai1" kind="presentation" identifier="ShowProductCard" modalPresentationStyle="currentContext" id="QLL-V9-AYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te4-jU-MYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -362,40 +362,58 @@
         <scene sceneID="ig0-wW-rR1">
             <objects>
                 <viewController id="zbt-0s-Ai1" customClass="ProductCardViewController" customModule="BlackStarWearDiplomaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8fG-aN-lag">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8fG-aN-lag">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-Gn-oAU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="319"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="363"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13h-rN-OYr">
-                                        <rect key="frame" x="0.0" y="-7.5" width="414" height="334"/>
+                                    <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13h-rN-OYr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="UYc-wV-8qV" appends="YES" id="Orc-ZL-ayv"/>
+                                            <outletCollection property="gestureRecognizers" destination="aHX-YR-yNl" appends="YES" id="Zbx-oR-opQ"/>
+                                        </connections>
                                     </imageView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-LW-LvR">
-                                        <rect key="frame" x="20" y="277" width="374" height="37"/>
+                                    <pageControl clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-LW-LvR">
+                                        <rect key="frame" x="20" y="321" width="374" height="37"/>
                                         <color key="currentPageIndicatorTintColor" red="0.35320654509999999" green="0.77095419170000001" blue="0.38030150530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqi-Fb-1YQ">
+                                        <rect key="frame" x="13" y="13" width="25" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="KFK-9r-iSH"/>
+                                            <constraint firstAttribute="height" constant="18" id="Rjc-fB-NFh"/>
+                                        </constraints>
+                                        <state key="normal" image="backArrow"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="zbt-0s-Ai1" eventType="touchUpInside" id="Iza-fc-S3V"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Qbj-LW-LvR" secondAttribute="bottom" constant="5" id="1eh-d1-ciK"/>
-                                    <constraint firstItem="13h-rN-OYr" firstAttribute="width" secondItem="TdE-Gn-oAU" secondAttribute="width" multiplier="0.797333" constant="83.903999999999996" id="3OA-Yl-xHx"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qbj-LW-LvR" secondAttribute="trailing" constant="20" id="3j3-x7-aIG"/>
-                                    <constraint firstItem="13h-rN-OYr" firstAttribute="centerX" secondItem="TdE-Gn-oAU" secondAttribute="centerX" id="Cwc-qv-tzX"/>
-                                    <constraint firstItem="13h-rN-OYr" firstAttribute="centerY" secondItem="TdE-Gn-oAU" secondAttribute="centerY" id="gMC-Do-xYL"/>
-                                    <constraint firstItem="Qbj-LW-LvR" firstAttribute="leading" secondItem="TdE-Gn-oAU" secondAttribute="leading" constant="20" id="rjY-d9-VWa"/>
-                                    <constraint firstItem="13h-rN-OYr" firstAttribute="height" secondItem="TdE-Gn-oAU" secondAttribute="height" multiplier="0.585014" constant="147.48991354466858" id="x91-Yw-CSc"/>
+                                    <constraint firstAttribute="trailing" secondItem="13h-rN-OYr" secondAttribute="trailing" id="B0c-qk-Qht"/>
+                                    <constraint firstItem="Bqi-Fb-1YQ" firstAttribute="top" secondItem="TdE-Gn-oAU" secondAttribute="top" constant="13" id="CmV-lt-5gb"/>
+                                    <constraint firstItem="Qbj-LW-LvR" firstAttribute="leading" secondItem="TdE-Gn-oAU" secondAttribute="leading" constant="20" id="I4X-u8-XrB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qbj-LW-LvR" secondAttribute="trailing" constant="20" id="JDk-WI-LxL"/>
+                                    <constraint firstItem="Bqi-Fb-1YQ" firstAttribute="leading" secondItem="TdE-Gn-oAU" secondAttribute="leading" constant="13" id="Svb-ei-J1b"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qbj-LW-LvR" secondAttribute="bottom" constant="5" id="USn-wO-6rD"/>
+                                    <constraint firstItem="13h-rN-OYr" firstAttribute="top" secondItem="TdE-Gn-oAU" secondAttribute="top" id="aaq-vI-Px0"/>
+                                    <constraint firstItem="13h-rN-OYr" firstAttribute="leading" secondItem="TdE-Gn-oAU" secondAttribute="leading" id="lxa-IE-CI6"/>
+                                    <constraint firstAttribute="bottom" secondItem="13h-rN-OYr" secondAttribute="bottom" id="s2G-W1-w6s"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="TdE-Gn-oAU" secondAttribute="bottom" constant="455" id="15B-tk-wbs"/>
-                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="O1J-5P-18v"/>
-                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="top" secondItem="Obe-A6-HU1" secondAttribute="top" id="PQo-6n-oQ6"/>
-                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="trailing" secondItem="Obe-A6-HU1" secondAttribute="trailing" id="RKs-vM-6tz"/>
+                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="top" secondItem="Obe-A6-HU1" secondAttribute="top" id="1f5-wA-7vC"/>
+                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="centerX" secondItem="Obe-A6-HU1" secondAttribute="centerX" id="2d0-EX-zwt"/>
+                            <constraint firstItem="TdE-Gn-oAU" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="Z3F-n0-6Wq"/>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="trailing" secondItem="TdE-Gn-oAU" secondAttribute="trailing" id="a6F-Ra-NVp"/>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="TdE-Gn-oAU" secondAttribute="bottom" constant="455" id="rjs-bV-ekU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Obe-A6-HU1"/>
                     </view>
@@ -406,6 +424,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqx-s3-9M8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="UYc-wV-8qV">
+                    <connections>
+                        <action selector="rightSwipe:" destination="zbt-0s-Ai1" id="LEF-3c-6Yy"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="aHX-YR-yNl">
+                    <connections>
+                        <action selector="leftSwipe:" destination="zbt-0s-Ai1" id="KRR-MJ-Oy8"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3476.811594202899" y="87.053571428571431"/>
         </scene>
@@ -428,4 +456,7 @@
             <point key="canvasLocation" x="138.40000000000001" y="87.706146926536732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backArrow" width="1522" height="1092"/>
+    </resources>
 </document>
