@@ -89,6 +89,7 @@ struct ProductsList {
     let colorImageURL: String
     let mainImage: String
     let price: String
+    var productImages: [String] = []
     
     init?(data: NSDictionary) {
         guard let name = data["name"] as? String,
@@ -97,6 +98,12 @@ struct ProductsList {
             let mainImage = data["mainImage"] as? String,
             let price = data["price"] as? String else {
                 return nil
+        }
+        
+        for image in data["productImages"] as! NSArray {
+            if let productImage = image as? NSDictionary {
+                productImages.append(productImage["imageURL"] as! String)
+            }
         }
         
         self.name = name

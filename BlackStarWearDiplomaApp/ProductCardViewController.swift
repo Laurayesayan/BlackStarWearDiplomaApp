@@ -15,31 +15,50 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var productImagesPageControl: UIPageControl!
 
     var product = ProductsList()
-
+    private var dataImages = [Data]()
+//    private var currentImage = Data()
+    private var currentImageIndex = 0
     
-//    private var currentImage = String()
-//    private var currentImageIndex = Int()
     //    var sizeAndColorView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.product.name)
+        convertURLImageToData(URLImages: product.productImages)
+        productImagesPageControl.numberOfPages = dataImages.count
+        productImageView.image = UIImage(data: dataImages[currentImageIndex])
+    }
+    
+    func convertURLImageToData(URLImages: [String]) {
+        dataImages = []
+        for imageURL in product.productImages {
+            let url = URL(string: "http://blackstarshop.ru/\(imageURL)")
+            let data = try? Data(contentsOf: url!)
+            
+            dataImages.append(data!)
+        }
         
-//        productImagesPageControl.numberOfPages = 5
+//        cell.productImage.image = UIImage(data: data!)
     }
     
     @IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
-        self.productImageView.image = UIImage(imageLiteralResourceName: "NON")
-        productImagesPageControl.currentPage -= 1
+        if !dataImages.isEmpty {
+            currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0
+            self.productImageView.image = UIImage(data: dataImages[currentImageIndex])
+            productImagesPageControl.currentPage -= 1
+        }
+
     }
     
     @IBAction func leftSwipe(_ sender: UISwipeGestureRecognizer) {
-        self.productImageView.image = UIImage(imageLiteralResourceName: "backArrow")
-        productImagesPageControl.currentPage += 1
+        if !dataImages.isEmpty {
+            currentImageIndex = currentImageIndex < (dataImages.count - 1) ? currentImageIndex + 1 : currentImageIndex
+            self.productImageView.image = UIImage(data: dataImages[currentImageIndex])
+            productImagesPageControl.currentPage += 1
+        }
+
     }
     
     @IBAction func backButton(_ sender: Any) {
-        print("We were really touched")
         dismiss(animated: true, completion: nil)
     }
 

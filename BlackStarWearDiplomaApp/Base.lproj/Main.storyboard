@@ -393,7 +393,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="13h-rN-OYr" secondAttribute="trailing" id="B0c-qk-Qht"/>
                                     <constraint firstItem="Bqi-Fb-1YQ" firstAttribute="top" secondItem="TdE-Gn-oAU" secondAttribute="top" constant="13" id="CmV-lt-5gb"/>

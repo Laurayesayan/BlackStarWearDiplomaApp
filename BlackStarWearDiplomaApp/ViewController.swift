@@ -16,12 +16,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+       
         CategoriesLoader().loadCategories { categories in
             self.categories = categories
             self.categoriesTableView.reloadData()
         }
+        
     }
+
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
