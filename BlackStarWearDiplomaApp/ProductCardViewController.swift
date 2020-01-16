@@ -14,18 +14,44 @@ class ProductCardViewController: UIViewController {
     
     @IBOutlet weak var productImagesPageControl: UIPageControl!
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var buttonTextLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
     var product = ProductsList()
     private var dataImages = [Data]()
-//    private var currentImage = Data()
     private var currentImageIndex = 0
     
     //    var sizeAndColorView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showInitialScreen()
+    }
+    
+    func showInitialScreen() {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.12
+        
+        titleLabel.text = product.name
+        
+        priceLabel.font = UIFont(name: "HelveticaNeueCyr-Bold", size: 17)
+        priceLabel.alpha = 0.5
+        priceLabel.text = product.price + " ₽"
+        
+        buttonView.layer.cornerRadius = 10
+
+        buttonTextLabel.attributedText = NSMutableAttributedString(string: "ДОБАВИТЬ В КОРЗИНУ", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        buttonTextLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        buttonTextLabel.textAlignment = .center
+        
         convertURLImageToData(URLImages: product.productImages)
         productImagesPageControl.numberOfPages = dataImages.count
         productImageView.image = UIImage(data: dataImages[currentImageIndex])
+        
+        textView.text = product.description
     }
     
     func convertURLImageToData(URLImages: [String]) {

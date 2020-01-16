@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuI-ep-eme">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuI-ep-eme">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -377,7 +377,7 @@
                                             <outletCollection property="gestureRecognizers" destination="aHX-YR-yNl" appends="YES" id="Zbx-oR-opQ"/>
                                         </connections>
                                     </imageView>
-                                    <pageControl clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-LW-LvR">
+                                    <pageControl clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qbj-LW-LvR">
                                         <rect key="frame" x="20" y="321" width="374" height="37"/>
                                         <color key="currentPageIndicatorTintColor" red="0.35320654509999999" green="0.77095419170000001" blue="0.38030150530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </pageControl>
@@ -405,21 +405,132 @@
                                     <constraint firstAttribute="bottom" secondItem="13h-rN-OYr" secondAttribute="bottom" id="s2G-W1-w6s"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="676-Dw-csi">
+                                <rect key="frame" x="0.0" y="415" width="414" height="447"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGz-45-LcW">
+                                        <rect key="frame" x="38" y="20" width="338" height="40"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Title">
+                                                <attributes>
+                                                    <font key="NSFont" size="36" name="AkzidenzGroteskPro-BoldCn"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-Ec-Teg">
+                                        <rect key="frame" x="38" y="68" width="86.5" height="19"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Стоимость:">
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="AkzidenzGroteskPro-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ6-uw-Mid">
+                                        <rect key="frame" x="132.5" y="68" width="243.5" height="20.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeueCyr-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTR-md-acX">
+                                        <rect key="frame" x="38" y="96" width="338" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfl-jQ-Qcq">
+                                                <rect key="frame" x="24" y="16" width="290" height="16"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="ДОБАВИТЬ В КОРЗИНУ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="13" name="AkzidenzGroteskPro-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2033638656" green="0.47054857020000002" blue="0.96475118400000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Wfl-jQ-Qcq" secondAttribute="bottom" constant="16" id="9kg-uc-eiZ"/>
+                                            <constraint firstItem="Wfl-jQ-Qcq" firstAttribute="top" secondItem="ZTR-md-acX" secondAttribute="top" constant="16" id="jG7-Ra-IjW"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wfl-jQ-Qcq" secondAttribute="trailing" constant="24" id="kDg-t7-mZT"/>
+                                            <constraint firstItem="Wfl-jQ-Qcq" firstAttribute="leading" secondItem="ZTR-md-acX" secondAttribute="leading" constant="24" id="rJ2-Fp-Peg"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2FK-Nd-CCB">
+                                        <rect key="frame" x="38" y="191" width="338" height="256"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <font key="NSFont" size="16" name="Roboto-Medium"/>
+                                                    <font key="NSOriginalFont" size="14" name="Roboto-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZTR-md-acX" secondAttribute="bottom" constant="303" id="16c-RZ-4D1"/>
+                                    <constraint firstItem="2FK-Nd-CCB" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" constant="38" id="1C0-jj-eYf"/>
+                                    <constraint firstItem="jGz-45-LcW" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" constant="38" id="1VJ-Lk-Pkd"/>
+                                    <constraint firstItem="hQ6-uw-Mid" firstAttribute="leading" secondItem="rm8-Ec-Teg" secondAttribute="trailing" constant="8" id="2dL-bB-SMA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZTR-md-acX" secondAttribute="trailing" constant="38" id="33l-bp-O63"/>
+                                    <constraint firstItem="rm8-Ec-Teg" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" constant="38" id="3pQ-BP-SZF"/>
+                                    <constraint firstItem="rm8-Ec-Teg" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="68" id="52d-JB-vLk"/>
+                                    <constraint firstAttribute="trailing" secondItem="hQ6-uw-Mid" secondAttribute="trailing" constant="38" id="9Pd-H8-1xm"/>
+                                    <constraint firstAttribute="trailing" secondItem="jGz-45-LcW" secondAttribute="trailing" constant="38" id="BdP-Xc-1us"/>
+                                    <constraint firstItem="hQ6-uw-Mid" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="68" id="PfF-hh-WFC"/>
+                                    <constraint firstItem="ZTR-md-acX" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" constant="38" id="QUc-YW-hbL"/>
+                                    <constraint firstItem="jGz-45-LcW" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="20" symbolic="YES" id="WFV-LK-fTP"/>
+                                    <constraint firstItem="2FK-Nd-CCB" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="191" id="avQ-sO-C3G"/>
+                                    <constraint firstAttribute="trailing" secondItem="2FK-Nd-CCB" secondAttribute="trailing" constant="38" id="dKd-TG-m6A"/>
+                                    <constraint firstAttribute="bottom" secondItem="hQ6-uw-Mid" secondAttribute="bottom" constant="358.5" id="j3O-mz-3oY"/>
+                                    <constraint firstAttribute="bottom" secondItem="rm8-Ec-Teg" secondAttribute="bottom" constant="360" id="ky1-d4-cH0"/>
+                                    <constraint firstAttribute="bottom" secondItem="jGz-45-LcW" secondAttribute="bottom" constant="387" id="rWT-IL-LLg"/>
+                                    <constraint firstAttribute="bottom" secondItem="2FK-Nd-CCB" secondAttribute="bottom" id="uJR-El-sBe"/>
+                                    <constraint firstItem="ZTR-md-acX" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="96" id="yWq-Sg-Bqc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TdE-Gn-oAU" firstAttribute="top" secondItem="Obe-A6-HU1" secondAttribute="top" id="1f5-wA-7vC"/>
                             <constraint firstItem="TdE-Gn-oAU" firstAttribute="centerX" secondItem="Obe-A6-HU1" secondAttribute="centerX" id="2d0-EX-zwt"/>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="676-Dw-csi" secondAttribute="bottom" id="3lN-Ed-yeR"/>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="trailing" secondItem="676-Dw-csi" secondAttribute="trailing" id="7Us-aj-iiJ"/>
+                            <constraint firstItem="676-Dw-csi" firstAttribute="firstBaseline" secondItem="TdE-Gn-oAU" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="CTe-Rt-bZ0"/>
                             <constraint firstItem="TdE-Gn-oAU" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="Z3F-n0-6Wq"/>
                             <constraint firstItem="Obe-A6-HU1" firstAttribute="trailing" secondItem="TdE-Gn-oAU" secondAttribute="trailing" id="a6F-Ra-NVp"/>
+                            <constraint firstItem="676-Dw-csi" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="jtP-QJ-68W"/>
                             <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="TdE-Gn-oAU" secondAttribute="bottom" constant="455" id="rjs-bV-ekU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Obe-A6-HU1"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="TnS-U7-GrD"/>
                     <connections>
+                        <outlet property="buttonTextLabel" destination="Wfl-jQ-Qcq" id="dsS-W7-8vq"/>
+                        <outlet property="buttonView" destination="ZTR-md-acX" id="RSH-L7-V5r"/>
+                        <outlet property="priceLabel" destination="hQ6-uw-Mid" id="ahZ-yM-g6h"/>
                         <outlet property="productImageView" destination="13h-rN-OYr" id="4yt-Nh-gwm"/>
                         <outlet property="productImagesPageControl" destination="Qbj-LW-LvR" id="CIT-Gn-Ion"/>
+                        <outlet property="textView" destination="2FK-Nd-CCB" id="I0E-RL-haC"/>
+                        <outlet property="titleLabel" destination="jGz-45-LcW" id="OdP-Yo-2HN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqx-s3-9M8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
