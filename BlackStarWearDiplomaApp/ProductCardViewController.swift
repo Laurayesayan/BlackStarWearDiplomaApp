@@ -19,16 +19,25 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var buttonTextLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var basketProductsCount: UIView!
+    @IBOutlet weak var itemsInBuscketLabel: UILabel!
     
     var product = ProductsList()
     private var dataImages = [Data]()
     private var currentImageIndex = 0
+
     
     //    var sizeAndColorView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showInitialScreen()
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
     }
     
     func showInitialScreen() {
@@ -52,6 +61,13 @@ class ProductCardViewController: UIViewController {
         productImageView.image = UIImage(data: dataImages[currentImageIndex])
         
         textView.text = product.description
+        
+        basketProductsCount.layer.cornerRadius = basketProductsCount.frame.size.width / 2
+        
+        itemsInBuscketLabel.textColor = .white
+        
+//        itemsInBuscketLabel.font = UIFont(name: "HelveticaNeueCyr-Bold", size: 11)
+
     }
     
     func convertURLImageToData(URLImages: [String]) {
