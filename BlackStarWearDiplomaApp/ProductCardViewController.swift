@@ -21,17 +21,16 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var basketProductsCount: UIView!
     @IBOutlet weak var itemsInBuscketLabel: UILabel!
-    
+
+   
     var product = ProductsList()
     private var dataImages = [Data]()
     private var currentImageIndex = 0
-
-    
-    //    var sizeAndColorView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showInitialScreen()
+//        self.sizeAndColorView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height / 2)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -103,7 +102,21 @@ class ProductCardViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    @IBAction func pushButtonGesture(_ sender: Any) {
+//        showSizeAndColorView()
+    }
+    
+//    func showSizeAndColorView() {
+//        UIView.animate(withDuration: 0.5, delay: 0.15, options: .curveEaseOut, animations: {
+//            self.sizeAndColorViewTopConstraint.constant = 10
+////            self.sizeAndColorView.center.y -= self.sizeAndColorView.frame.size.height
+//
+//        }, completion: { finished in
+//
+//        })
+//
+//    }
+    
 }
 
 

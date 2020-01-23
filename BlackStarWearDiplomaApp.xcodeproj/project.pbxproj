@@ -22,6 +22,7 @@
 		F7B89FA623B69D7A00F3F87F /* JSONStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */; };
 		F7B89FA823B739B800F3F87F /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B89FA723B739B800F3F87F /* CategoriesTableViewCell.swift */; };
 		F7B9488923C2283200543526 /* ProductCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B9488823C2283200543526 /* ProductCardViewController.swift */; };
+		F7CB08DA23DA36A7002535B0 /* SizeAndColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStructure.swift; sourceTree = "<group>"; };
 		F7B89FA723B739B800F3F87F /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		F7B9488823C2283200543526 /* ProductCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewController.swift; sourceTree = "<group>"; };
+		F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeAndColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */,
 				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
 				F7B89F9523B6986400F3F87F /* Main.storyboard */,
+				F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */,
 				F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */,
 				F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */,
 				F7B9488823C2283200543526 /* ProductCardViewController.swift */,
@@ -232,6 +235,7 @@
 			files = (
 				F7B89F9423B6986400F3F87F /* ViewController.swift in Sources */,
 				F771D32323B9DC1900D5185F /* SubcategoriesViewController.swift in Sources */,
+				F7CB08DA23DA36A7002535B0 /* SizeAndColorViewController.swift in Sources */,
 				F7B9488923C2283200543526 /* ProductCardViewController.swift in Sources */,
 				F7B89F9023B6986400F3F87F /* AppDelegate.swift in Sources */,
 				F7B89FA423B69D2400F3F87F /* CategoriesLoader.swift in Sources */,
