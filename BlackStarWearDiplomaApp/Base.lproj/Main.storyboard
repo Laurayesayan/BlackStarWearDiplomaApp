@@ -586,6 +586,8 @@
                         <outlet property="priceLabel" destination="hQ6-uw-Mid" id="ahZ-yM-g6h"/>
                         <outlet property="productImageView" destination="13h-rN-OYr" id="4yt-Nh-gwm"/>
                         <outlet property="productImagesPageControl" destination="Qbj-LW-LvR" id="CIT-Gn-Ion"/>
+                        <outlet property="sizeAndColorView" destination="I2S-y4-SzY" id="Tsm-Te-ctu"/>
+                        <outlet property="sizeAndColorViewTopConstraint" destination="XhX-zC-i0W" id="Q9F-Jh-bP2"/>
                         <outlet property="textView" destination="2FK-Nd-CCB" id="I0E-RL-haC"/>
                         <outlet property="titleLabel" destination="jGz-45-LcW" id="OdP-Yo-2HN"/>
                     </connections>

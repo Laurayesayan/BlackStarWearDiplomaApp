@@ -42,7 +42,6 @@ extension SizeAndColorViewController: UITableViewDelegate, UITableViewDataSource
         sizeAndColorTableView.reloadData()
     }
     
-
 }
 
 class SizeAndColorTableViewCell: UITableViewCell {

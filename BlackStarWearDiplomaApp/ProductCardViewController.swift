@@ -21,7 +21,9 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var basketProductsCount: UIView!
     @IBOutlet weak var itemsInBuscketLabel: UILabel!
-
+    @IBOutlet weak var sizeAndColorViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sizeAndColorView: UIView!
+    
    
     var product = ProductsList()
     private var dataImages = [Data]()
@@ -30,7 +32,6 @@ class ProductCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showInitialScreen()
-//        self.sizeAndColorView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height / 2)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -65,8 +66,8 @@ class ProductCardViewController: UIViewController {
         
         itemsInBuscketLabel.textColor = .white
         
-//        itemsInBuscketLabel.font = UIFont(name: "HelveticaNeueCyr-Bold", size: 11)
-
+        sizeAndColorViewTopConstraint.constant = self.view.frame.height
+        sizeAndColorView.isHidden = true
     }
     
     func convertURLImageToData(URLImages: [String]) {
@@ -103,38 +104,16 @@ class ProductCardViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func pushButtonGesture(_ sender: Any) {
-//        showSizeAndColorView()
+        showSizeAndColorView()
     }
     
-//    func showSizeAndColorView() {
-//        UIView.animate(withDuration: 0.5, delay: 0.15, options: .curveEaseOut, animations: {
-//            self.sizeAndColorViewTopConstraint.constant = 10
-////            self.sizeAndColorView.center.y -= self.sizeAndColorView.frame.size.height
-//
-//        }, completion: { finished in
-//
-//        })
-//
-//    }
-    
+    func showSizeAndColorView() {
+        self.sizeAndColorView.isHidden = false
+        self.sizeAndColorViewTopConstraint.constant = 18
+        UIView.animate(withDuration: 0.65, delay: 0.0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }) { (True) in
+        }
+    }
+
 }
-
-
-
-// Нужно будет после того, как закончу с карточкой товара.
-//func showSizeAndColorView() {
-//    UIView.animate(withDuration: 0.5, delay: 0.15, options: .curveEaseOut, animations: {
-//        self.sizeAndColorView.center.y -= self.sizeAndColorView.frame.size.height
-//
-//    }, completion: { finished in
-//
-//    })
-//
-//}
-
-//@IBAction func buyButton(_ sender: Any) {
-//    self.sizeAndColorView.layer.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-//    self.sizeAndColorView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height / 2)
-//    self.view.addSubview(self.sizeAndColorView)
-//    showSizeAndColorView()
-//}
