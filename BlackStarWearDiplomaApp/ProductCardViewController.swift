@@ -107,6 +107,12 @@ class ProductCardViewController: UIViewController {
         showSizeAndColorView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sizeAndColor = segue.destination as? SizeAndColorViewController, segue.identifier == "ShowSizeAndColorView" {
+            sizeAndColor.productInfo = self.product
+        }
+    }
+    
     func showSizeAndColorView() {
         self.sizeAndColorView.isHidden = false
         self.sizeAndColorViewTopConstraint.constant = 18

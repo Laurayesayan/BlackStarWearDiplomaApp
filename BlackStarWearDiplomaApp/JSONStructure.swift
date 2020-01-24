@@ -89,13 +89,34 @@ struct ProductsList {
     let colorImageURL: String
     let mainImage: String
     let price: String
+    let colorName: String
     var productImages: [String] = []
+    var offers: [Offers] = []
+    
+    struct Offers {
+        let size: String
+        let quantity: String
+        let productOfferID: String
+        
+        init?(data: NSDictionary) {
+            guard let size = data["size"] as? String,
+                let quantity = data["quantity"] as? String,
+                let productOfferID = data["productOfferID"] as? String else {
+                    return nil
+            }
+            
+            self.size = size
+            self.quantity = quantity
+            self.productOfferID = productOfferID
+        }
+    }
     
     init?(data: NSDictionary) {
         guard let name = data["name"] as? String,
             let description = data["description"] as? String,
             let colorImageURL = data["colorImageURL"] as? String,
             let mainImage = data["mainImage"] as? String,
+            let colorName = data["colorName"] as? String,
             let price = data["price"] as? String else {
                 return nil
         }
@@ -106,11 +127,18 @@ struct ProductsList {
             }
         }
         
+        for subdata in data["offers"] as! NSArray {
+            if let offer = Offers(data: subdata as! NSDictionary) {
+                self.offers.append(offer)
+            }
+        }
+        
         self.name = name
         self.description = description
         self.colorImageURL = colorImageURL
         self.mainImage = mainImage
         self.price = price
+        self.colorName = colorName
     }
     
     init() {
@@ -119,5 +147,6 @@ struct ProductsList {
         self.colorImageURL = ""
         self.mainImage = ""
         self.price = ""
+        self.colorName = ""
     }
 }

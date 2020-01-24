@@ -46,31 +46,3 @@ class CategoriesLoader {
         }
     }
 }
-    
-//    func loadSubcategories(getLoadedSubcategories: @escaping ([Subcategories]) -> Void) {
-//        AF.request("http://blackstarshop.ru/index.php?route=api/v1/categories").responseJSON {
-//            response in
-//            if let json = response.value,
-//                let jsonDict = json as? NSDictionary {
-//                var subcategoriesList: [Subcategories] = []
-//
-//                for (_, data) in jsonDict {
-//                    let dictData = data as! NSDictionary
-//                    if let dictData = dictData["subcategories"] {
-//                        for subdata in dictData as! NSArray {
-//                            if let subcategories = Subcategories(data: subdata as! NSDictionary) {
-//                                subcategoriesList.append(subcategories)
-//                            }
-//                        }
-//                    }
-//
-//                }
-//
-//                DispatchQueue.main.async {
-//                    getLoadedSubcategories(subcategoriesList)
-//                }
-//            }
-//        }
-//
-//    }
-

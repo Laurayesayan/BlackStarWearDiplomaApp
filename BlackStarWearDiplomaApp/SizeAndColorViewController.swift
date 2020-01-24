@@ -11,28 +11,31 @@ import UIKit
 class SizeAndColorViewController: UIViewController {
     @IBOutlet weak var sizeAndColorTableView: UITableView!
     var selectedRow = -1
+    var productInfo = ProductsList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(productInfo.name)
     }
 }
 
 extension SizeAndColorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return productInfo.offers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = sizeAndColorTableView.dequeueReusableCell(withIdentifier: "SizeAndColorViewCell", for: indexPath) as! SizeAndColorTableViewCell
         
-        cell.colorLabel.text = "Gold"
+        cell.colorLabel.text = productInfo.colorName
+        
         if(indexPath.row == selectedRow) {
             cell.tickImageView.isHidden = false
         } else {
             cell.tickImageView.isHidden = true
         }
         
-        cell.sizeLabel.text = "extra large"
+        cell.sizeLabel.text = productInfo.offers[indexPath.row].size
         return cell
     }
     
