@@ -16,7 +16,10 @@ class BasketTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setTitleLabelProperties()
+        setSizeLabelProperties()
+        setColorLabelProperties()
+        setTotalAmountLabelProperties()
     }
     
     func setTitleLabelProperties() {
@@ -34,13 +37,12 @@ class BasketTableViewCell: UITableViewCell {
     func setColorLabelProperties() {
         colorLabel.textColor = UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1)
         colorLabel.font = UIFont(name: "SFProDisplay-Medium", size: 11)
-        colorLabel.attributedText = NSMutableAttributedString(string: " Цвет: белый", attributes: [NSAttributedString.Key.kern: 0.13])
+        colorLabel.attributedText = NSMutableAttributedString(string: "Цвет: белый", attributes: [NSAttributedString.Key.kern: 0.13])
     }
     
     func setTotalAmountLabelProperties() {
         totalAmountLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         totalAmountLabel.font = UIFont(name: "SFProDisplay-Medium", size: 15)
-
         totalAmountLabel.attributedText = NSMutableAttributedString(string: "2 500 руб.", attributes: [NSAttributedString.Key.kern: 0.18])
     }
 

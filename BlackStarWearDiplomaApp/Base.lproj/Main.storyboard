@@ -849,8 +849,18 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQG-4B-1t4">
+                                                            <rect key="frame" x="354" y="44" width="25" height="23"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="9Y3-Fv-0mk"/>
+                                                                <constraint firstAttribute="height" constant="22" id="Sbg-6W-JMP"/>
+                                                            </constraints>
+                                                            <color key="tintColor" red="0.3413032889" green="0.34498006110000001" blue="0.35686147210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <state key="normal" image="trash" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="BgW-YQ-iSa" firstAttribute="top" secondItem="bfd-Ep-SLr" secondAttribute="bottom" constant="1" id="5zx-jt-8pa"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1sw-6b-m3k" secondAttribute="trailing" constant="18" id="8cR-Vg-MAq"/>
@@ -861,14 +871,18 @@
                                                         <constraint firstItem="HdK-7C-xi3" firstAttribute="leading" secondItem="NDd-ip-ihT" secondAttribute="trailing" constant="10" id="Fbh-Ej-LN1"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HdK-7C-xi3" secondAttribute="trailing" constant="18" id="JNz-Di-N0G"/>
                                                         <constraint firstAttribute="bottom" secondItem="HdK-7C-xi3" secondAttribute="bottom" constant="8" id="SMI-53-K6E"/>
+                                                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="OQG-4B-1t4" secondAttribute="bottom" constant="44" id="TXv-94-DEM"/>
                                                         <constraint firstItem="bfd-Ep-SLr" firstAttribute="top" secondItem="1sw-6b-m3k" secondAttribute="bottom" constant="5" id="VSG-1D-SaF"/>
                                                         <constraint firstItem="1sw-6b-m3k" firstAttribute="leading" secondItem="NDd-ip-ihT" secondAttribute="trailing" constant="10" id="VUv-9r-b7p"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BgW-YQ-iSa" secondAttribute="trailing" constant="18" id="dTP-pY-aMQ"/>
                                                         <constraint firstAttribute="bottom" secondItem="NDd-ip-ihT" secondAttribute="bottom" constant="8" id="h98-bk-5ow"/>
                                                         <constraint firstItem="NDd-ip-ihT" firstAttribute="leading" secondItem="c7o-ES-uma" secondAttribute="leading" constant="8" id="iJP-B1-ZiB"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bfd-Ep-SLr" secondAttribute="trailing" constant="18" id="nYT-KF-RBz"/>
+                                                        <constraint firstItem="OQG-4B-1t4" firstAttribute="centerY" secondItem="c7o-ES-uma" secondAttribute="centerY" id="pJY-AL-o8X"/>
                                                         <constraint firstItem="BgW-YQ-iSa" firstAttribute="leading" secondItem="NDd-ip-ihT" secondAttribute="trailing" constant="10" id="suR-xg-ph3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OQG-4B-1t4" secondAttribute="trailing" constant="35" id="wLm-q3-B14"/>
                                                         <constraint firstAttribute="trailing" secondItem="NDd-ip-ihT" secondAttribute="trailing" constant="331" id="yXK-e3-V76"/>
+                                                        <constraint firstItem="OQG-4B-1t4" firstAttribute="top" relation="lessThanOrEqual" secondItem="c7o-ES-uma" secondAttribute="top" constant="44" id="yb9-Fd-ngq"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -986,6 +1000,7 @@
         <image name="NON" width="820" height="820"/>
         <image name="backArrow" width="1522" height="1092"/>
         <image name="gray basket" width="1746" height="1498"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
         <image name="validPic" width="1744" height="1312"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>

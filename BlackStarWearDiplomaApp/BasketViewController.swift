@@ -15,6 +15,7 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var totalMoneyLabel: UILabel!
     
+    var productsInBusket: [ProductsList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
