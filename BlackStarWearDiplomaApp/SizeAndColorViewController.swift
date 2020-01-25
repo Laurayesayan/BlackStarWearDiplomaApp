@@ -15,7 +15,6 @@ class SizeAndColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(productInfo.name)
     }
 }
 

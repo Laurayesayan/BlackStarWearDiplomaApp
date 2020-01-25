@@ -308,7 +308,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="bTQ-hE-e68" secondAttribute="trailing" constant="8" id="OWU-13-Ppg"/>
                                                         <constraint firstAttribute="trailing" secondItem="KF0-nt-30M" secondAttribute="trailing" constant="8" id="Py8-bu-dzv"/>
                                                         <constraint firstItem="9KO-iW-rTO" firstAttribute="leading" secondItem="ndW-R7-nUi" secondAttribute="leading" constant="8" id="VbQ-8R-uQx"/>
-                                                        <constraint firstItem="KF0-nt-30M" firstAttribute="top" secondItem="9KO-iW-rTO" secondAttribute="bottom" id="cvd-DL-8HM"/>
+                                                        <constraint firstItem="KF0-nt-30M" firstAttribute="top" secondItem="9KO-iW-rTO" secondAttribute="bottom" priority="750" id="cvd-DL-8HM"/>
                                                         <constraint firstItem="bTQ-hE-e68" firstAttribute="top" secondItem="ndW-R7-nUi" secondAttribute="top" id="jD6-LU-Uvx"/>
                                                         <constraint firstItem="bTQ-hE-e68" firstAttribute="leading" secondItem="ndW-R7-nUi" secondAttribute="leading" constant="8" id="rPO-jc-FUl"/>
                                                         <constraint firstItem="9KO-iW-rTO" firstAttribute="top" secondItem="ndW-R7-nUi" secondAttribute="top" constant="44" id="y01-uO-lnT"/>
@@ -317,10 +317,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ndW-R7-nUi" secondAttribute="bottom" id="R4A-MZ-C7X"/>
-                                                <constraint firstItem="ndW-R7-nUi" firstAttribute="top" secondItem="5N9-tH-vsU" secondAttribute="top" id="nXB-Nm-loa"/>
-                                                <constraint firstAttribute="trailing" secondItem="ndW-R7-nUi" secondAttribute="trailing" id="rb6-tG-ads"/>
-                                                <constraint firstItem="ndW-R7-nUi" firstAttribute="leading" secondItem="5N9-tH-vsU" secondAttribute="leading" id="xJw-Vx-Vu7"/>
+                                                <constraint firstAttribute="bottom" secondItem="ndW-R7-nUi" secondAttribute="bottom" priority="750" id="R4A-MZ-C7X"/>
+                                                <constraint firstItem="ndW-R7-nUi" firstAttribute="top" secondItem="5N9-tH-vsU" secondAttribute="top" priority="750" id="nXB-Nm-loa"/>
+                                                <constraint firstAttribute="trailing" secondItem="ndW-R7-nUi" secondAttribute="trailing" priority="750" id="rb6-tG-ads"/>
+                                                <constraint firstItem="ndW-R7-nUi" firstAttribute="leading" secondItem="5N9-tH-vsU" secondAttribute="leading" priority="750" id="xJw-Vx-Vu7"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="184" height="290"/>
@@ -341,7 +341,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jF3-rJ-y38" firstAttribute="top" secondItem="Vva-PO-AIa" secondAttribute="top" id="FAo-zR-28p"/>
+                            <constraint firstItem="jF3-rJ-y38" firstAttribute="top" secondItem="Vva-PO-AIa" secondAttribute="top" priority="750" id="FAo-zR-28p"/>
                             <constraint firstItem="Vva-PO-AIa" firstAttribute="bottom" secondItem="jF3-rJ-y38" secondAttribute="bottom" id="SLz-6S-UIi"/>
                             <constraint firstItem="Vva-PO-AIa" firstAttribute="trailing" secondItem="jF3-rJ-y38" secondAttribute="trailing" id="TDV-tt-sqv"/>
                             <constraint firstItem="jF3-rJ-y38" firstAttribute="leading" secondItem="Vva-PO-AIa" secondAttribute="leading" id="XWF-de-C2a"/>
@@ -536,6 +536,7 @@
                                     </containerView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ZTR-md-acX" secondAttribute="bottom" constant="303" id="16c-RZ-4D1"/>
                                     <constraint firstItem="2FK-Nd-CCB" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" constant="13" id="1C0-jj-eYf"/>
@@ -549,7 +550,7 @@
                                     <constraint firstItem="hQ6-uw-Mid" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="68" id="PfF-hh-WFC"/>
                                     <constraint firstItem="ZTR-md-acX" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" constant="13" id="QUc-YW-hbL"/>
                                     <constraint firstItem="jGz-45-LcW" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="20" symbolic="YES" id="WFV-LK-fTP"/>
-                                    <constraint firstItem="I2S-y4-SzY" firstAttribute="top" secondItem="ZTR-md-acX" secondAttribute="bottom" constant="18" id="XhX-zC-i0W"/>
+                                    <constraint firstItem="I2S-y4-SzY" firstAttribute="top" secondItem="ZTR-md-acX" secondAttribute="bottom" priority="750" constant="18" id="XhX-zC-i0W"/>
                                     <constraint firstItem="2FK-Nd-CCB" firstAttribute="top" secondItem="676-Dw-csi" secondAttribute="top" constant="191" id="avQ-sO-C3G"/>
                                     <constraint firstItem="I2S-y4-SzY" firstAttribute="leading" secondItem="676-Dw-csi" secondAttribute="leading" id="bli-gT-uAT"/>
                                     <constraint firstAttribute="trailing" secondItem="2FK-Nd-CCB" secondAttribute="trailing" constant="13" id="dKd-TG-m6A"/>
@@ -562,6 +563,14 @@
                                     <constraint firstAttribute="bottom" secondItem="I2S-y4-SzY" secondAttribute="bottom" id="zKD-aj-qZ6"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-ze-Nky">
+                                <rect key="frame" x="0.0" y="44" width="414" height="533"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DaS-L1-oaM" appends="YES" id="nDK-eC-dKd"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -570,16 +579,21 @@
                             <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="676-Dw-csi" secondAttribute="bottom" id="3lN-Ed-yeR"/>
                             <constraint firstItem="Obe-A6-HU1" firstAttribute="trailing" secondItem="676-Dw-csi" secondAttribute="trailing" id="7Us-aj-iiJ"/>
                             <constraint firstItem="676-Dw-csi" firstAttribute="firstBaseline" secondItem="TdE-Gn-oAU" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="CTe-Rt-bZ0"/>
+                            <constraint firstItem="YK3-ze-Nky" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="Stm-cl-jXt"/>
                             <constraint firstItem="TdE-Gn-oAU" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="Z3F-n0-6Wq"/>
                             <constraint firstItem="Obe-A6-HU1" firstAttribute="trailing" secondItem="TdE-Gn-oAU" secondAttribute="trailing" id="a6F-Ra-NVp"/>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="top" secondItem="YK3-ze-Nky" secondAttribute="top" id="bpO-08-kaG"/>
                             <constraint firstItem="676-Dw-csi" firstAttribute="leading" secondItem="Obe-A6-HU1" secondAttribute="leading" id="jtP-QJ-68W"/>
+                            <constraint firstItem="I2S-y4-SzY" firstAttribute="top" secondItem="YK3-ze-Nky" secondAttribute="bottom" id="nxH-9d-8K7"/>
                             <constraint firstItem="Obe-A6-HU1" firstAttribute="bottom" secondItem="TdE-Gn-oAU" secondAttribute="bottom" constant="455" id="rjs-bV-ekU"/>
+                            <constraint firstItem="Obe-A6-HU1" firstAttribute="trailing" secondItem="YK3-ze-Nky" secondAttribute="trailing" id="yuY-Mo-hoI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Obe-A6-HU1"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="TnS-U7-GrD"/>
                     <connections>
                         <outlet property="basketProductsCount" destination="d8d-9g-YKW" id="Gcg-26-xTl"/>
+                        <outlet property="blindView" destination="YK3-ze-Nky" id="0yI-l4-s4o"/>
                         <outlet property="buttonTextLabel" destination="Wfl-jQ-Qcq" id="dsS-W7-8vq"/>
                         <outlet property="buttonView" destination="ZTR-md-acX" id="RSH-L7-V5r"/>
                         <outlet property="itemsInBuscketLabel" destination="doC-a0-axK" id="JpQ-G7-faT"/>
@@ -608,6 +622,11 @@
                         <action selector="pushButtonGesture:" destination="zbt-0s-Ai1" id="23c-P5-aon"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="DaS-L1-oaM">
+                    <connections>
+                        <action selector="hideSizeAndColorViewGesture:" destination="zbt-0s-Ai1" id="jGU-mS-knl"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3476.811594202899" y="87.053571428571431"/>
         </scene>

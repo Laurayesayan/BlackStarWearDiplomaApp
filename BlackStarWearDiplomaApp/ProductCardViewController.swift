@@ -23,6 +23,7 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var itemsInBuscketLabel: UILabel!
     @IBOutlet weak var sizeAndColorViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var sizeAndColorView: UIView!
+    @IBOutlet weak var blindView: UIView!
     
    
     var product = ProductsList()
@@ -68,6 +69,8 @@ class ProductCardViewController: UIViewController {
         
         sizeAndColorViewTopConstraint.constant = self.view.frame.height
         sizeAndColorView.isHidden = true
+        
+        blindView.isHidden = true
     }
     
     func convertURLImageToData(URLImages: [String]) {
@@ -103,6 +106,7 @@ class ProductCardViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func pushButtonGesture(_ sender: Any) {
         showSizeAndColorView()
     }
@@ -115,11 +119,25 @@ class ProductCardViewController: UIViewController {
     
     func showSizeAndColorView() {
         self.sizeAndColorView.isHidden = false
+        self.blindView.isHidden = false
         self.sizeAndColorViewTopConstraint.constant = 18
         UIView.animate(withDuration: 0.65, delay: 0.0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }) { (True) in
         }
+
     }
+    
+    @IBAction func hideSizeAndColorViewGesture(_ sender: Any) {
+        self.sizeAndColorViewTopConstraint.constant = self.view.frame.size.width
+        UIView.animate(withDuration: 0.65, delay: 0.0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }) { (True) in
+            self.sizeAndColorView.isHidden = true
+        }
+        
+        self.blindView.isHidden = true
+    }
+    
 
 }
