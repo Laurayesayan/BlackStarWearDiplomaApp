@@ -41,6 +41,10 @@ class ProductCardViewController: UIViewController {
         }
     }
     
+    @IBAction func showBasketView(_ sender: Any) {
+        performSegue(withIdentifier: "ShowBasketView", sender:itemsInBuscketLabel)
+    }
+    
     func showInitialScreen() {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.12
