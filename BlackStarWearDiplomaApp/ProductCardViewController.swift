@@ -29,6 +29,8 @@ class ProductCardViewController: UIViewController {
     var product = ProductsList()
     private var dataImages = [Data]()
     private var currentImageIndex = 0
+    var chosenSize = ProductsList.Offers()
+    var isSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,8 +87,6 @@ class ProductCardViewController: UIViewController {
             
             dataImages.append(data!)
         }
-        
-//        cell.productImage.image = UIImage(data: data!)
     }
     
     @IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
@@ -118,6 +118,16 @@ class ProductCardViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let sizeAndColor = segue.destination as? SizeAndColorViewController, segue.identifier == "ShowSizeAndColorView" {
             sizeAndColor.productInfo = self.product
+            sizeAndColor.delegate = self
+        }
+        if let basketView = segue.destination as? BasketViewController, segue.identifier == "ShowBasketView" {
+            if isSelected {
+                var copyOfProduct = product
+                copyOfProduct.offers = []
+                copyOfProduct.offers.append(chosenSize)
+                basketView.product = copyOfProduct
+                isSelected = false
+            }
         }
     }
     
@@ -141,7 +151,18 @@ class ProductCardViewController: UIViewController {
         }
         
         self.blindView.isHidden = true
+        
+        if isSelected {
+            performSegue(withIdentifier: "ShowBasketView", sender:itemsInBuscketLabel)
+        }
+
     }
     
+}
 
+extension ProductCardViewController: SizeAndColorViewControllerDelegate {
+    func getChosenSize(_ size: ProductsList.Offers) {
+        self.chosenSize = size
+        isSelected = true
+    }
 }

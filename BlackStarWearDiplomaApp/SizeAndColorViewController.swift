@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol SizeAndColorViewControllerDelegate {
+    func getChosenSize(_ size: ProductsList.Offers)
+}
+
 class SizeAndColorViewController: UIViewController {
     @IBOutlet weak var sizeAndColorTableView: UITableView!
     var selectedRow = -1
     var productInfo = ProductsList()
+    var delegate: SizeAndColorViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,7 @@ extension SizeAndColorViewController: UITableViewDelegate, UITableViewDataSource
         
         if(indexPath.row == selectedRow) {
             cell.tickImageView.isHidden = false
+            delegate?.getChosenSize(productInfo.offers[indexPath.row])
         } else {
             cell.tickImageView.isHidden = true
         }

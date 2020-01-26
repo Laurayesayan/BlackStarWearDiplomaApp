@@ -8,14 +8,17 @@
 
 import UIKit
 
+
 class BasketViewController: UIViewController {
     @IBOutlet weak var orderButton: UIView!
     @IBOutlet weak var orderButtonLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var totalMoneyLabel: UILabel!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var basketTableView: UITableView!
     
-    var productsInBusket: [ProductsList] = []
+    var productsInBusket = [ProductsList]()
+    var product = ProductsList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +27,36 @@ class BasketViewController: UIViewController {
         orderButton.layer.cornerRadius = 24
         setOrderButtonLabelProperties()
         setResultLabelProperties()
-        setTotalMoneyLabelProperties()
+        setTotalAmountLabelProperties()
+        
+//        RealmDataBase.shared.deleteAllProducts()
+        
+        if !self.product.isEmpty {
+            recordProduct()
+        }
+        
+        updateProductsInBusket()
+        
 
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
+    
+    func removeProduct(productOfferID: String) {
+        RealmDataBase.shared.deleteProduct(id: productOfferID)
+    }
+    
+    func updateProductsInBusket() {
+        productsInBusket = RealmDataBase.shared.getSavedProducts()
+    }
+    
+    func recordProduct() {
+        RealmDataBase.shared.setProduct(product: product)
+        RealmDataBase.shared.recordProduct()
     }
     
     func setTitleLabelProperties() {
@@ -49,30 +80,59 @@ class BasketViewController: UIViewController {
         resultLabel.attributedText = NSMutableAttributedString(string: "Итого:", attributes: [NSAttributedString.Key.kern: 0.19])
     }
     
-    func setTotalMoneyLabelProperties() {
-        totalMoneyLabel.alpha = 0.4
-        totalMoneyLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        totalMoneyLabel.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        totalMoneyLabel.textAlignment = .right
-        totalMoneyLabel.attributedText = NSMutableAttributedString(string: "2500 руб.", attributes: [NSAttributedString.Key.kern: 0.19])
+    func setTotalAmountLabelProperties() {
+        totalAmountLabel.alpha = 0.4
+        totalAmountLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        totalAmountLabel.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        totalAmountLabel.textAlignment = .right
+        totalAmountLabel.attributedText = NSMutableAttributedString(string: "2500 руб.", attributes: [NSAttributedString.Key.kern: 0.19])
     }
     
     @IBAction func closeBasketView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func deleteProduct(_ sender: Any) {
+        basketTableView.isEditing = !basketTableView.isEditing
+    }
+    
 }
 
 extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return productsInBusket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BasketCell") as! BasketTableViewCell
+        let cell = basketTableView.dequeueReusableCell(withIdentifier: "BasketCell") as! BasketTableViewCell
         
-        return cell    }
+        let url = URL(string: "http://blackstarshop.ru/\(productsInBusket[indexPath.row].mainImage)")
+        let data = try? Data(contentsOf: url!)
+        cell.imageView?.image = UIImage(data: data!)
+        
+        cell.colorLabel.attributedText = NSMutableAttributedString(string: "\(productsInBusket[indexPath.row].colorName)", attributes: [NSAttributedString.Key.kern: 0.13])
+        
+        cell.titleLabel.attributedText = NSMutableAttributedString(string: "\(productsInBusket[indexPath.row].name)", attributes: [NSAttributedString.Key.kern: 0.19])
+        
+        if !productsInBusket[indexPath.row].offers.isEmpty {
+            cell.sizeLabel.attributedText = NSMutableAttributedString(string: "\(productsInBusket[indexPath.row].offers[0].size)", attributes: [NSAttributedString.Key.kern: 0.13])
+        }
+        
+        cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(productsInBusket[indexPath.row].price)", attributes: [NSAttributedString.Key.kern: 0.18])
+        
+        return cell
+    }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        basketTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removeProduct(productOfferID: productsInBusket[indexPath.row].offers[0].productOfferID)
+            updateProductsInBusket()
+            basketTableView.reloadData()
+        }
+    }
     
 }

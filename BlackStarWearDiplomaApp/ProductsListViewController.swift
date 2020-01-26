@@ -22,6 +22,12 @@ class ProductsListViewController: UIViewController {
             self.productsCollectionView.reloadData()
         }
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
 }
 
 extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

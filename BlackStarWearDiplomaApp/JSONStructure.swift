@@ -92,6 +92,7 @@ struct ProductsList {
     let colorName: String
     var productImages: [String] = []
     var offers: [Offers] = []
+    var isEmpty = true
     
     struct Offers {
         let size: String
@@ -108,6 +109,18 @@ struct ProductsList {
             self.size = size
             self.quantity = quantity
             self.productOfferID = productOfferID
+        }
+        
+        init() {
+            self.size = ""
+            self.quantity = ""
+            self.productOfferID = ""
+        }
+        
+        init(size: String, quantity: String, productOfferID: String) {
+            self.productOfferID = productOfferID
+            self.quantity = quantity
+            self.size = size
         }
     }
     
@@ -139,6 +152,7 @@ struct ProductsList {
         self.mainImage = mainImage
         self.price = price
         self.colorName = colorName
+        self.isEmpty = false
     }
     
     init() {
@@ -148,5 +162,17 @@ struct ProductsList {
         self.mainImage = ""
         self.price = ""
         self.colorName = ""
+    }
+    
+    init(quantity: String, titleLabel: String, sizeLabel: String, colorLabel: String, priceLabel: String, productOfferID: String, image: String) {
+        self.offers = [Offers(size: sizeLabel, quantity: quantity, productOfferID: productOfferID)]
+        
+        self.description = ""
+        self.colorImageURL = ""
+        self.name = titleLabel
+        self.mainImage = image
+        self.colorName = colorLabel
+        self.price = priceLabel
+        self.isEmpty = false
     }
 }
