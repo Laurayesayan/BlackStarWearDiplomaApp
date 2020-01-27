@@ -121,7 +121,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             cell.sizeLabel.attributedText = NSMutableAttributedString(string: "\(productsInBusket[indexPath.row].offers[0].size)", attributes: [NSAttributedString.Key.kern: 0.13])
         }
         
-        cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(productsInBusket[indexPath.row].price)", attributes: [NSAttributedString.Key.kern: 0.18])
+        cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(round(Double(productsInBusket[indexPath.row].price) ?? 0))", attributes: [NSAttributedString.Key.kern: 0.18])
         
         return cell
     }

@@ -58,7 +58,7 @@ class ProductCardViewController: UIViewController {
         
         priceLabel.font = UIFont(name: "HelveticaNeueCyr-Bold", size: 17)
         priceLabel.alpha = 0.5
-        priceLabel.text = product.price + " ₽"
+        priceLabel.text = "\(round(Double(product.price) ?? 0)) ₽"
         
         buttonView.layer.cornerRadius = 10
 

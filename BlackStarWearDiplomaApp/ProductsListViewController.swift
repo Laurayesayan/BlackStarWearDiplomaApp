@@ -45,12 +45,8 @@ extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UIColl
 
         cell.titleLabel.text = productsList[indexPath.row].name
         cell.descriptionLabel.text = productsList[indexPath.row].description
-        let doublePrice = Double(productsList[indexPath.row].price)
-        let newStringPrice = String(doublePrice!)
-        cell.priceLabel.text = newStringPrice
-//        var test = NSString(string: productsList[indexPath.row].price)
-//        cell.priceLabel.text = NSString(format: "%.2f", test) as String
-        //.filter {$0 != "."}
+        cell.priceLabel.text = "\(round(Double(productsList[indexPath.row].price) ?? 0))"
+        
 
         let url = URL(string: "http://blackstarshop.ru/\(productsList[indexPath.row].mainImage)")
 
