@@ -53,7 +53,7 @@ class RealmDataBase {
             productsList.append(ProductsList(quantity: prod.quantity, titleLabel: prod.titleLabel, sizeLabel: prod.sizeLabel, colorLabel: prod.colorLabel, priceLabel: prod.priceLabel, productOfferID: prod.productOfferID, image: prod.image))
         }
         
-        return productsList.reversed()
+        return productsList
     }
     
     func deleteAllProducts() {

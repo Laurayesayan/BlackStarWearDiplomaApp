@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol BasketViewControllerDelegate {
+    func getProductsCount(productCount: Int)
+}
 
 class BasketViewController: UIViewController {
     @IBOutlet weak var orderButton: UIView!
@@ -19,6 +22,7 @@ class BasketViewController: UIViewController {
     
     var productsInBusket = [ProductsList]()
     var product = ProductsList()
+    var delegate: BasketViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +32,6 @@ class BasketViewController: UIViewController {
         setOrderButtonLabelProperties()
         setResultLabelProperties()
         setTotalAmountLabelProperties()
-        
-//        RealmDataBase.shared.deleteAllProducts()
         
         if !self.product.isEmpty {
             recordProduct()
@@ -89,6 +91,7 @@ class BasketViewController: UIViewController {
     }
     
     @IBAction func closeBasketView(_ sender: Any) {
+        delegate?.getProductsCount(productCount: productsInBusket.count)
         dismiss(animated: true, completion: nil)
     }
     

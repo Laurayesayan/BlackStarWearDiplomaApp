@@ -24,6 +24,9 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var sizeAndColorViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var sizeAndColorView: UIView!
     @IBOutlet weak var blindView: UIView!
+    @IBOutlet weak var redCircleOfItemsCount: UIView!
+    
+    var productsCounter = RealmDataBase.shared.getSavedProducts().count // неплохо Шерлок, но когда в базе что-то удаляется, ты здесь об этом не знаешь. Скорее всего придется делать делегат или замыкание.
     
    
     var product = ProductsList()
@@ -77,6 +80,8 @@ class ProductCardViewController: UIViewController {
         sizeAndColorView.isHidden = true
         
         blindView.isHidden = true
+        
+        itemsInBuscketLabel.text = "\(productsCounter)"
     }
     
     func convertURLImageToData(URLImages: [String]) {
@@ -121,6 +126,7 @@ class ProductCardViewController: UIViewController {
             sizeAndColor.delegate = self
         }
         if let basketView = segue.destination as? BasketViewController, segue.identifier == "ShowBasketView" {
+            basketView.delegate = self
             if isSelected {
                 var copyOfProduct = product
                 copyOfProduct.offers = []
@@ -135,7 +141,7 @@ class ProductCardViewController: UIViewController {
         self.sizeAndColorView.isHidden = false
         self.blindView.isHidden = false
         self.sizeAndColorViewTopConstraint.constant = 18
-        UIView.animate(withDuration: 0.65, delay: 0.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.45, delay: 0.0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }) { (True) in
         }
@@ -144,7 +150,7 @@ class ProductCardViewController: UIViewController {
     
     @IBAction func hideSizeAndColorViewGesture(_ sender: Any) {
         self.sizeAndColorViewTopConstraint.constant = self.view.frame.size.width
-        UIView.animate(withDuration: 0.65, delay: 0.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.45, delay: 0.0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }) { (True) in
             self.sizeAndColorView.isHidden = true
@@ -153,16 +159,46 @@ class ProductCardViewController: UIViewController {
         self.blindView.isHidden = true
         
         if isSelected {
+            animateItemsCount()
             performSegue(withIdentifier: "ShowBasketView", sender:itemsInBuscketLabel)
         }
-
+    }
+    
+    func animateItemsCount() {
+        UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: .curveEaseIn, animations: {
+            var frame = self.redCircleOfItemsCount.frame
+            self.redCircleOfItemsCount.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width * 2, height: frame.size.height * 2)
+            
+            frame = self.itemsInBuscketLabel.frame
+            self.itemsInBuscketLabel.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width * 2, height: frame.size.height * 2)
+        }) { (True) in
+            
+        }
+        
+        
+//        UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseIn, animations: {
+//            var frame = self.redCircleOfItemsCount.frame
+//            self.redCircleOfItemsCount.frame = CGRect(x: frame.origin.x + frame.width / 2, y: frame.origin.y, width: frame.size.width * 4, height: frame.size.height * 4)
+//
+//            frame = self.itemsInBuscketLabel.frame
+//            self.itemsInBuscketLabel.frame = CGRect(x: frame.origin.x + frame.width / 2, y: frame.origin.y, width: frame.size.width * 4, height: frame.size.height * 4)
+//        }) { (True) in
+//
+//        }
     }
     
 }
 
-extension ProductCardViewController: SizeAndColorViewControllerDelegate {
+extension ProductCardViewController: SizeAndColorViewControllerDelegate, BasketViewControllerDelegate {
+    func getProductsCount(productCount: Int) {
+        productsCounter = productCount
+        itemsInBuscketLabel.text = "\(productsCounter)"
+    }
+    
     func getChosenSize(_ size: ProductsList.Offers) {
         self.chosenSize = size
         isSelected = true
+        productsCounter += 1
+        itemsInBuscketLabel.text = "\(productsCounter)"
     }
 }
