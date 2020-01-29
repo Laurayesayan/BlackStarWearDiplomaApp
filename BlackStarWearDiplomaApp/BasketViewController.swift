@@ -38,6 +38,9 @@ class BasketViewController: UIViewController {
         }
         
         updateProductsInBusket()
+        calculateTotalAmount()
+        
+        basketTableView.allowsMultipleSelectionDuringEditing = true
         
 
     }
@@ -95,8 +98,48 @@ class BasketViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func deleteProduct(_ sender: Any) {
-        basketTableView.isEditing = !basketTableView.isEditing
+    //    @IBAction func deleteProduct(_ sender: Any) {
+//        basketTableView.isEditing = !basketTableView.isEditing
+//        if let selectedRows = basketTableView.indexPathsForSelectedRows {
+//            for indexPath in selectedRows {
+//                print(indexPath)
+//                RealmDataBase.shared.deleteProduct(id: productsInBusket[indexPath.row].offers[0].productOfferID)
+//            }
+//
+////            RealmDataBase.shared.deleteProduct(id: productsInBusket[selectedRows)
+//
+//
+////            var items: [String] = []
+////            for indexPath in selectedRows  {
+////                items.append(tasksList[indexPath.row])
+////            }
+//
+////            for item in items {
+////                if let index = tasksList.firstIndex(of: item) {
+////                    removeTask(task: tasksList[index])
+////                    tasksList.remove(at: index)
+////                }
+////            }
+//
+//            basketTableView.beginUpdates()
+//            basketTableView.deleteRows(at: selectedRows, with: .automatic)
+//            basketTableView.endUpdates()
+//        }
+//
+//        updateProductsInBusket()
+//        calculateTotalAmount()
+//
+//
+////        updateTasksList()
+//
+//    }
+    
+    func calculateTotalAmount() {
+        var totalAmount = 0.0
+        for i in 0..<productsInBusket.count {
+            totalAmount += round(Double(productsInBusket[i].price) ?? 0)
+            self.totalAmountLabel.text = "\(totalAmount)"
+        }
     }
     
 }
@@ -123,6 +166,16 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(round(Double(productsInBusket[indexPath.row].price) ?? 0))", attributes: [NSAttributedString.Key.kern: 0.18])
         
+        cell.buttonPressed = {
+            
+            // Сделать здесь вызов окна с вопросом: "Удалить товар из карзины?" и двумя вариантами ответа.
+            
+            RealmDataBase.shared.deleteProduct(id: self.productsInBusket[indexPath.row].offers[0].productOfferID)
+            self.updateProductsInBusket()
+            self.calculateTotalAmount()
+            self.basketTableView.reloadData()
+        }
+        
         return cell
     }
     
@@ -134,8 +187,13 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             removeProduct(productOfferID: productsInBusket[indexPath.row].offers[0].productOfferID)
             updateProductsInBusket()
+            calculateTotalAmount()
             basketTableView.reloadData()
         }
     }
     
+}
+
+class GarbageButton: UIButton {
+    var rowIndex = Int()
 }

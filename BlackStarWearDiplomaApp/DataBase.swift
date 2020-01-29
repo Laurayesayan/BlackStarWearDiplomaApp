@@ -68,10 +68,11 @@ class RealmDataBase {
                 try! realm.write {
                     realm.delete(prod)
                 }
+                break
             }
         }
 
-        productsList = [] // may be fail
+        productsList = []
     }
     
     func isEmpty() -> Bool {

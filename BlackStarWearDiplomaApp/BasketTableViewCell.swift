@@ -13,6 +13,7 @@ class BasketTableViewCell: UITableViewCell {
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    var buttonPressed : (() -> ()) = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +46,12 @@ class BasketTableViewCell: UITableViewCell {
         priceLabel.font = UIFont(name: "SFProDisplay-Medium", size: 15)
         priceLabel.attributedText = NSMutableAttributedString(string: "Price.", attributes: [NSAttributedString.Key.kern: 0.18])
     }
-
+    
+    
+    @IBAction func deleteProduct(_ sender: UIButton) {
+        buttonPressed()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
