@@ -167,17 +167,35 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(round(Double(productsInBusket[indexPath.row].price) ?? 0))", attributes: [NSAttributedString.Key.kern: 0.18])
         
         cell.buttonPressed = {
-            let alert = UIAlertController(title: "", message: "Удалить товар из корзины?", preferredStyle: .alert)
-            alert.view.layer.cornerRadius = 8
+            let customAlertInstantiator = CustomAlertInstantiator()
             
-            alert.addAction(UIAlertAction(title: "ДА", style: .destructive, handler: { (UIAlertAction) in
+            let yesButton = AlertButton(title: "ДА", action: {
                 RealmDataBase.shared.deleteProduct(id: self.productsInBusket[indexPath.row].offers[0].productOfferID)
                 self.updateProductsInBusket()
                 self.calculateTotalAmount()
                 self.basketTableView.reloadData()
-            }))
-            alert.addAction(UIAlertAction(title: "НЕТ", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            }, titleColor: UIColor.white, backgroundColor: #colorLiteral(red: 0, green: 0.4780656695, blue: 0.9984853864, alpha: 1), cornerRadius: 8)
+            
+            let noButton = AlertButton(title: " НЕТ", action: {
+                
+            }, titleColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 8)
+            
+            let alert = AlertPayload(message: "Удалить товар из корзины?", messageColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), buttons: [yesButton, noButton])
+
+            customAlertInstantiator.showAlert(payload: alert, parentViewController: self)
+            
+            
+            //            let alert = UIAlertController(title: "", message: "Удалить товар из корзины?", preferredStyle: .alert)
+//            alert.view.layer.cornerRadius = 8
+//
+//            alert.addAction(UIAlertAction(title: "ДА", style: .destructive, handler: { (UIAlertAction) in
+//                RealmDataBase.shared.deleteProduct(id: self.productsInBusket[indexPath.row].offers[0].productOfferID)
+//                self.updateProductsInBusket()
+//                self.calculateTotalAmount()
+//                self.basketTableView.reloadData()
+//            }))
+//            alert.addAction(UIAlertAction(title: "НЕТ", style: .cancel, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
         }
         
         return cell

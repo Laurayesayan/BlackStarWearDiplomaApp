@@ -998,6 +998,75 @@
             </objects>
             <point key="canvasLocation" x="3476.811594202899" y="772.76785714285711"/>
         </scene>
+        <!--Custom Alert Controller-->
+        <scene sceneID="vtH-TB-JUE">
+            <objects>
+                <viewController storyboardIdentifier="CustomAlert" id="qo1-oU-hhB" customClass="CustomAlertController" customModule="BlackStarWearDiplomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mvK-Pe-gtD">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="220"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Z7Z-M1-Un2">
+                                <rect key="frame" x="16" y="100.5" width="308" height="94.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdG-wW-xvZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="308" height="41.5"/>
+                                        <color key="backgroundColor" red="0.2033638656" green="0.47054857020000002" blue="0.96475118400000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="firstButton:" destination="qo1-oU-hhB" eventType="touchUpInside" id="bDL-2R-M3O"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXa-ZS-gcW">
+                                        <rect key="frame" x="0.0" y="53.5" width="308" height="41"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="secondButton:" destination="qo1-oU-hhB" eventType="touchUpInside" id="PMM-AD-sLT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SdG-wW-xvZ" secondAttribute="trailing" id="bdD-Qc-lx7"/>
+                                    <constraint firstItem="sXa-ZS-gcW" firstAttribute="leading" secondItem="Z7Z-M1-Un2" secondAttribute="leading" id="cWE-no-uub"/>
+                                    <constraint firstItem="SdG-wW-xvZ" firstAttribute="leading" secondItem="Z7Z-M1-Un2" secondAttribute="leading" id="jOi-fY-B3z"/>
+                                    <constraint firstAttribute="trailing" secondItem="sXa-ZS-gcW" secondAttribute="trailing" id="zdm-O5-nXh"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NF-E4-tgD">
+                                <rect key="frame" x="16" y="60" width="308" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Z7Z-M1-Un2" firstAttribute="top" secondItem="9NF-E4-tgD" secondAttribute="bottom" constant="20" id="0mB-Dq-h0B"/>
+                            <constraint firstItem="bSu-fk-s2Q" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="9NF-E4-tgD" secondAttribute="bottom" constant="133" id="2bu-Cm-jnQ"/>
+                            <constraint firstItem="bSu-fk-s2Q" firstAttribute="trailing" secondItem="Z7Z-M1-Un2" secondAttribute="trailing" constant="16" id="8b8-J5-t9k"/>
+                            <constraint firstItem="9NF-E4-tgD" firstAttribute="leading" secondItem="bSu-fk-s2Q" secondAttribute="leading" constant="16" id="FDP-2j-m6l"/>
+                            <constraint firstItem="9NF-E4-tgD" firstAttribute="top" secondItem="bSu-fk-s2Q" secondAttribute="top" constant="16" id="VXh-jE-puO"/>
+                            <constraint firstItem="Z7Z-M1-Un2" firstAttribute="leading" secondItem="bSu-fk-s2Q" secondAttribute="leading" constant="16" id="XdS-Bj-9Bj"/>
+                            <constraint firstItem="bSu-fk-s2Q" firstAttribute="trailing" secondItem="9NF-E4-tgD" secondAttribute="trailing" constant="16" id="mQo-8y-tsD"/>
+                            <constraint firstItem="bSu-fk-s2Q" firstAttribute="bottom" secondItem="Z7Z-M1-Un2" secondAttribute="bottom" constant="25" id="ycD-M8-slJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bSu-fk-s2Q"/>
+                    </view>
+                    <size key="freeformSize" width="340" height="220"/>
+                    <connections>
+                        <outlet property="firstButton" destination="SdG-wW-xvZ" id="3Mk-4X-7yd"/>
+                        <outlet property="message" destination="9NF-E4-tgD" id="NAl-OI-mlG"/>
+                        <outlet property="secondButton" destination="sXa-ZS-gcW" id="rjB-be-DYo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3AY-Lr-hvY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4192.753623188406" y="545.75892857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GrayBackArrow" width="1522" height="1092"/>

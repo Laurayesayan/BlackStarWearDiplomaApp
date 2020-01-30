@@ -17,6 +17,14 @@ class ProductsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        CategoriesLoader().loadProductsList(id: id) { productsList in
+//            self.productsList = productsList
+//            self.productsCollectionView.reloadData()
+//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         CategoriesLoader().loadProductsList(id: id) { productsList in
             self.productsList = productsList
             self.productsCollectionView.reloadData()

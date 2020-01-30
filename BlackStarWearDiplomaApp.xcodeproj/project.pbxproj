@@ -26,6 +26,7 @@
 		F7CB08DC23DCC09B002535B0 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08DB23DCC09B002535B0 /* BasketViewController.swift */; };
 		F7CB08DE23DCDAE7002535B0 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */; };
 		F7CB08E023DDDDFA002535B0 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08DF23DDDDFA002535B0 /* DataBase.swift */; };
+		F7CB08E223E358D8002535B0 /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08E123E358D8002535B0 /* CustomAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F7CB08DB23DCC09B002535B0 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		F7CB08DF23DDDDFA002535B0 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		F7CB08E123E358D8002535B0 /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				F7CB08DF23DDDDFA002535B0 /* DataBase.swift */,
 				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
 				F7B89F9523B6986400F3F87F /* Main.storyboard */,
+				F7CB08E123E358D8002535B0 /* CustomAlertController.swift */,
 				F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */,
 				F7CB08DB23DCC09B002535B0 /* BasketViewController.swift */,
 				F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */,
@@ -255,6 +258,7 @@
 				F7CB08E023DDDDFA002535B0 /* DataBase.swift in Sources */,
 				F7B89FA623B69D7A00F3F87F /* JSONStructure.swift in Sources */,
 				F7B89FA823B739B800F3F87F /* CategoriesTableViewCell.swift in Sources */,
+				F7CB08E223E358D8002535B0 /* CustomAlertController.swift in Sources */,
 				F73D6D1E23BE2942004D80FD /* ProductsListViewController.swift in Sources */,
 				F7CB08DE23DCDAE7002535B0 /* BasketTableViewCell.swift in Sources */,
 			);
