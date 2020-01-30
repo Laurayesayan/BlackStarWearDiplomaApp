@@ -174,17 +174,6 @@ class ProductCardViewController: UIViewController {
         }) { (True) in
             
         }
-        
-        
-//        UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseIn, animations: {
-//            var frame = self.redCircleOfItemsCount.frame
-//            self.redCircleOfItemsCount.frame = CGRect(x: frame.origin.x + frame.width / 2, y: frame.origin.y, width: frame.size.width * 4, height: frame.size.height * 4)
-//
-//            frame = self.itemsInBuscketLabel.frame
-//            self.itemsInBuscketLabel.frame = CGRect(x: frame.origin.x + frame.width / 2, y: frame.origin.y, width: frame.size.width * 4, height: frame.size.height * 4)
-//        }) { (True) in
-//
-//        }
     }
     
 }

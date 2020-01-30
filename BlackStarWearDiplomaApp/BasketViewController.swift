@@ -167,13 +167,17 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(round(Double(productsInBusket[indexPath.row].price) ?? 0))", attributes: [NSAttributedString.Key.kern: 0.18])
         
         cell.buttonPressed = {
+            let alert = UIAlertController(title: "", message: "Удалить товар из корзины?", preferredStyle: .alert)
+            alert.view.layer.cornerRadius = 8
             
-            // Сделать здесь вызов окна с вопросом: "Удалить товар из карзины?" и двумя вариантами ответа.
-            
-            RealmDataBase.shared.deleteProduct(id: self.productsInBusket[indexPath.row].offers[0].productOfferID)
-            self.updateProductsInBusket()
-            self.calculateTotalAmount()
-            self.basketTableView.reloadData()
+            alert.addAction(UIAlertAction(title: "ДА", style: .destructive, handler: { (UIAlertAction) in
+                RealmDataBase.shared.deleteProduct(id: self.productsInBusket[indexPath.row].offers[0].productOfferID)
+                self.updateProductsInBusket()
+                self.calculateTotalAmount()
+                self.basketTableView.reloadData()
+            }))
+            alert.addAction(UIAlertAction(title: "НЕТ", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
         return cell
@@ -192,8 +196,4 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-}
-
-class GarbageButton: UIButton {
-    var rowIndex = Int()
 }
