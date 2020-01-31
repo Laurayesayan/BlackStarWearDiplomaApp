@@ -14,12 +14,11 @@ struct AlertButton {
     var titleColor: UIColor?
     var backgroundColor: UIColor?
     var cornerRadius: CGFloat?
+    var borderWidth: CGFloat?
+    var borderColor: CGColor?
 }
 
 struct AlertPayload {
-    var title: String!
-    var titleColor: UIColor?
-    var backgroundColor: UIColor?
     var message: String!
     var messageColor: UIColor?
     var buttons: [AlertButton]!
@@ -40,10 +39,6 @@ class CustomAlertController: UIViewController {
         
         createButton(uiButton: firstButton, alertButton: payload.buttons[0])
         createButton(uiButton: secondButton, alertButton: payload.buttons[1])
-        
-        if payload.backgroundColor != nil {
-            view.backgroundColor = payload.backgroundColor
-        }
     }
     
     @IBAction func firstButton(_ sender: Any) {
@@ -68,6 +63,14 @@ class CustomAlertController: UIViewController {
         
         if alertButton.cornerRadius != nil {
             uiButton.layer.cornerRadius = alertButton.cornerRadius!
+        }
+        
+        if alertButton.borderWidth != nil {
+            uiButton.layer.borderWidth = alertButton.borderWidth!
+        }
+        
+        if alertButton.borderColor != nil {
+            uiButton.layer.borderColor = alertButton.borderColor!
         }
     }
     
