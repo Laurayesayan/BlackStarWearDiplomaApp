@@ -27,6 +27,7 @@
 		F7CB08DE23DCDAE7002535B0 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */; };
 		F7CB08E023DDDDFA002535B0 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08DF23DDDDFA002535B0 /* DataBase.swift */; };
 		F7CB08E223E358D8002535B0 /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08E123E358D8002535B0 /* CustomAlertController.swift */; };
+		F7CB08E723E5E1B0002535B0 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08E623E5E1B0002535B0 /* Basket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		F7CB08DF23DDDDFA002535B0 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		F7CB08E123E358D8002535B0 /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
+		F7CB08E623E5E1B0002535B0 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				F7CB08DF23DDDDFA002535B0 /* DataBase.swift */,
 				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
 				F7B89F9523B6986400F3F87F /* Main.storyboard */,
+				F7CB08E623E5E1B0002535B0 /* Basket.swift */,
 				F7CB08E123E358D8002535B0 /* CustomAlertController.swift */,
 				F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */,
 				F7CB08DB23DCC09B002535B0 /* BasketViewController.swift */,
@@ -253,6 +256,7 @@
 				F7B89F9023B6986400F3F87F /* AppDelegate.swift in Sources */,
 				F7B89FA423B69D2400F3F87F /* CategoriesLoader.swift in Sources */,
 				F771D32523B9E32600D5185F /* SubcategoriesTableViewCell.swift in Sources */,
+				F7CB08E723E5E1B0002535B0 /* Basket.swift in Sources */,
 				F7B89F9223B6986400F3F87F /* SceneDelegate.swift in Sources */,
 				F73D6D2023BE323C004D80FD /* ProductsCollectionViewCell.swift in Sources */,
 				F7CB08E023DDDDFA002535B0 /* DataBase.swift in Sources */,

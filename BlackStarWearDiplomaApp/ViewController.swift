@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var categoriesTableView: UITableView!
+    @IBOutlet weak var basket: Basket!
+    
     var categories: [Categories] = []
     var selectedRow = Int()
 
@@ -21,10 +23,21 @@ class ViewController: UIViewController {
             self.categories = categories
             self.categoriesTableView.reloadData()
         }
+        
+        basket.setProductCount(productCount: RealmDataBase.shared.getSavedProducts().count)
     }
+    
+    @IBAction func showBasketViewController(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "fromViewController", sender: self.basket)
+    }
+    
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketViewControllerDelegate {
+    func getProductsCount(productCount: Int) {
+        basket.setProductCount(productCount: productCount)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
@@ -46,6 +59,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let subcategoriesController = segue.destination as? SubcategoriesViewController, segue.identifier == "ShowSubcategories" {
             subcategoriesController.subcategories = self.categories[selectedRow]
+        }
+        
+        if let basketViewController = segue.destination as? BasketViewController, segue.identifier == "fromViewController" {
+            basketViewController.delegate = self
         }
     }
     

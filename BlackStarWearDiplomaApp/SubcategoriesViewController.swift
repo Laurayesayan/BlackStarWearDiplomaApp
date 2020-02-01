@@ -14,15 +14,27 @@ class SubcategoriesViewController: UIViewController {
     
     @IBOutlet weak var subcategoriesTableView: UITableView!
     @IBOutlet weak var navigationItemTitle: UINavigationItem!
+    @IBOutlet weak var basket: Basket!
+    var productsCount = RealmDataBase.shared.getSavedProducts().count
     
     var subcategories = Categories()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        basket.setProductCount(productCount: productsCount)
     }
+    
 }
 
-extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSource {
+extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSource, BasketViewControllerDelegate, ProductsListViewControllerDelegate {
+    func passProductsCount(productCount: Int) {
+        basket.setProductCount(productCount: productCount)
+    }
+    
+    func getProductsCount(productCount: Int) {
+        basket.setProductCount(productCount: productCount)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.subcategories.subcategories.count
@@ -50,6 +62,7 @@ extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let productsController = segue.destination as? ProductsListViewController, segue.identifier == "ShowProductsList" {
             productsController.id = self.selectedID
+            productsController.delegate = self
         }
     }
     

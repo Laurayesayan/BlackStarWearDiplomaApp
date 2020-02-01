@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuI-ep-eme">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MmU-AV-wZY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoriesCell" rowHeight="80" id="l5f-B7-Ixe" customClass="CategoriesTableViewCell" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
@@ -70,25 +70,45 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Wo2-F6-YeP"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-9P-OCn" customClass="Basket" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
+                                <rect key="frame" x="169.5" y="794" width="75" height="75"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KIF-9P-OCn" secondAttribute="height" multiplier="1:1" id="Sj3-pG-pGj"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JhK-Fo-2g1" appends="YES" id="pvl-vR-gQt"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="KIF-9P-OCn" firstAttribute="top" secondItem="MmU-AV-wZY" secondAttribute="bottom" constant="8" id="DSx-sD-4jY"/>
                             <constraint firstItem="MmU-AV-wZY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IgW-Xg-rs9"/>
                             <constraint firstItem="MmU-AV-wZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PgS-aP-UYY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MmU-AV-wZY" secondAttribute="bottom" id="ZLQ-x3-cGb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MmU-AV-wZY" secondAttribute="bottom" constant="76" id="ZLQ-x3-cGb"/>
+                            <constraint firstItem="KIF-9P-OCn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aw9-9G-w8n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MmU-AV-wZY" secondAttribute="trailing" id="uaI-MK-e7S"/>
+                            <constraint firstItem="KIF-9P-OCn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="7" id="vvy-TH-Qd1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="i65-74-Hfe"/>
                     <connections>
+                        <outlet property="basket" destination="KIF-9P-OCn" id="nLr-E3-QrN"/>
                         <outlet property="categoriesTableView" destination="MmU-AV-wZY" id="ZyN-V8-XvN"/>
                         <segue destination="zyu-5N-30M" kind="show" identifier="ShowSubcategories" id="N0y-Jr-Chm"/>
+                        <segue destination="Zvp-aM-UhC" kind="presentation" identifier="fromViewController" id="0EE-7s-DD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JhK-Fo-2g1">
+                    <connections>
+                        <action selector="showBasketViewController:" destination="BYZ-38-t0r" id="VNn-lW-QSD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="87.706146926536732"/>
+            <point key="canvasLocation" x="1076.8115942028987" y="87.053571428571431"/>
         </scene>
         <!--Subcategories View Controller-->
         <scene sceneID="RMg-Z2-HoE">
@@ -99,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-z7-eA2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubcategoriesCell" rowHeight="80" id="g2n-fc-YY4" customClass="SubcategoriesTableViewCell" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
@@ -152,26 +172,39 @@
                                     <outlet property="delegate" destination="zyu-5N-30M" id="g7B-Pg-ObB"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6l-aH-Mns" customClass="Basket" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
+                                <rect key="frame" x="169.5" y="794" width="75" height="75"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="C8h-t8-uC6"/>
+                                    <constraint firstAttribute="width" secondItem="U6l-aH-Mns" secondAttribute="height" multiplier="1:1" id="ym7-rv-Olj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="CXD-m3-BVG" firstAttribute="trailing" secondItem="LMd-z7-eA2" secondAttribute="trailing" id="GkP-j6-bJe"/>
                             <constraint firstItem="LMd-z7-eA2" firstAttribute="top" secondItem="CXD-m3-BVG" secondAttribute="top" id="MFJ-CI-m22"/>
+                            <constraint firstItem="U6l-aH-Mns" firstAttribute="centerX" secondItem="CXD-m3-BVG" secondAttribute="centerX" id="QPJ-oJ-ng0"/>
+                            <constraint firstItem="U6l-aH-Mns" firstAttribute="top" secondItem="LMd-z7-eA2" secondAttribute="bottom" constant="8" id="Tbj-Xb-nJu"/>
                             <constraint firstItem="LMd-z7-eA2" firstAttribute="leading" secondItem="CXD-m3-BVG" secondAttribute="leading" id="epQ-7q-gzh"/>
-                            <constraint firstItem="CXD-m3-BVG" firstAttribute="bottom" secondItem="LMd-z7-eA2" secondAttribute="bottom" id="nad-Ve-A7U"/>
+                            <constraint firstItem="U6l-aH-Mns" firstAttribute="bottom" secondItem="CXD-m3-BVG" secondAttribute="bottom" constant="7" id="imZ-Dl-yCP"/>
+                            <constraint firstItem="CXD-m3-BVG" firstAttribute="bottom" secondItem="LMd-z7-eA2" secondAttribute="bottom" constant="76" id="nad-Ve-A7U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CXD-m3-BVG"/>
                     </view>
                     <navigationItem key="navigationItem" id="wud-Ao-Yzj"/>
                     <connections>
+                        <outlet property="basket" destination="U6l-aH-Mns" id="ffM-j0-L1M"/>
                         <outlet property="navigationItemTitle" destination="wud-Ao-Yzj" id="LZK-7m-6AU"/>
                         <outlet property="subcategoriesTableView" destination="LMd-z7-eA2" id="Lh2-ew-Due"/>
                         <segue destination="3G1-9x-C6d" kind="show" identifier="ShowProductsList" id="dtY-Ih-FB5"/>
+                        <segue destination="Zvp-aM-UhC" kind="show" id="FAo-gi-ljc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yae-ge-vGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839.2" y="87.706146926536732"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="87.053571428571431"/>
         </scene>
         <!--Products List View Controller-->
         <scene sceneID="dHR-CP-Lqc">
@@ -182,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jF3-rJ-y38">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQ5-hv-KdP">
                                     <size key="itemSize" width="199" height="290"/>
@@ -251,7 +284,7 @@
                                                             <rect key="frame" x="8" y="202" width="158" height="39"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoG-BY-I18">
-                                                                    <rect key="frame" x="8" y="8" width="36.666666666666664" height="19"/>
+                                                                    <rect key="frame" x="8" y="8" width="36.5" height="19"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Price">
                                                                             <attributes>
@@ -337,23 +370,44 @@
                                     <outlet property="delegate" destination="3G1-9x-C6d" id="Xgk-sP-lZU"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjg-Si-7IG" customClass="Basket" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
+                                <rect key="frame" x="169.5" y="794" width="75" height="75"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cjg-Si-7IG" secondAttribute="height" multiplier="1:1" id="ghm-Jo-0VT"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yeI-fR-bKh" appends="YES" id="nXu-eX-2bd"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cjg-Si-7IG" firstAttribute="top" secondItem="jF3-rJ-y38" secondAttribute="bottom" constant="8" id="05n-zc-Yth"/>
                             <constraint firstItem="jF3-rJ-y38" firstAttribute="top" secondItem="Vva-PO-AIa" secondAttribute="top" priority="750" id="FAo-zR-28p"/>
-                            <constraint firstItem="Vva-PO-AIa" firstAttribute="bottom" secondItem="jF3-rJ-y38" secondAttribute="bottom" id="SLz-6S-UIi"/>
+                            <constraint firstItem="Vva-PO-AIa" firstAttribute="bottom" secondItem="jF3-rJ-y38" secondAttribute="bottom" constant="76" id="SLz-6S-UIi"/>
                             <constraint firstItem="Vva-PO-AIa" firstAttribute="trailing" secondItem="jF3-rJ-y38" secondAttribute="trailing" id="TDV-tt-sqv"/>
+                            <constraint firstItem="cjg-Si-7IG" firstAttribute="centerX" secondItem="zV3-wY-oPC" secondAttribute="centerX" id="XVR-Mx-cpe"/>
                             <constraint firstItem="jF3-rJ-y38" firstAttribute="leading" secondItem="Vva-PO-AIa" secondAttribute="leading" id="XWF-de-C2a"/>
+                            <constraint firstItem="cjg-Si-7IG" firstAttribute="bottom" secondItem="Vva-PO-AIa" secondAttribute="bottom" constant="7" id="pWh-82-ZTG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vva-PO-AIa"/>
                     </view>
                     <navigationItem key="navigationItem" id="yjq-Q2-avl"/>
                     <connections>
+                        <outlet property="basket" destination="cjg-Si-7IG" id="UPb-Wf-80R"/>
                         <outlet property="productsCollectionView" destination="jF3-rJ-y38" id="YyE-AC-kHL"/>
                         <segue destination="zbt-0s-Ai1" kind="presentation" identifier="ShowProductCard" modalPresentationStyle="currentContext" id="QLL-V9-AYo"/>
+                        <segue destination="Zvp-aM-UhC" kind="presentation" identifier="FromProductListController" id="GdZ-At-8Ax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te4-jU-MYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yeI-fR-bKh">
+                    <connections>
+                        <action selector="showBasket:" destination="3G1-9x-C6d" id="DDY-qG-4hh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2633.3333333333335" y="86.383928571428569"/>
         </scene>
@@ -403,10 +457,10 @@
                                         </connections>
                                     </imageView>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8d-9g-YKW">
-                                        <rect key="frame" x="394.66666666666669" y="6" width="11.333333333333314" height="12"/>
+                                        <rect key="frame" x="394.5" y="6" width="11.5" height="12"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doC-a0-axK">
-                                                <rect key="frame" x="0.0" y="0.0" width="11.333333333333334" height="12"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="11.5" height="12"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="99">
                                                         <attributes>
@@ -464,7 +518,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-Ec-Teg">
-                                        <rect key="frame" x="38.000000000000007" y="68" width="86.666666666666686" height="18.666666666666671"/>
+                                        <rect key="frame" x="38" y="68" width="86.5" height="19"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Стоимость:">
                                                 <attributes>
@@ -476,7 +530,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ6-uw-Mid">
-                                        <rect key="frame" x="132.66666666666663" y="68" width="243.33333333333337" height="20"/>
+                                        <rect key="frame" x="132.5" y="68" width="243.5" height="20"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
@@ -515,7 +569,7 @@
                                             <outletCollection property="gestureRecognizers" destination="NKP-A9-qCa" appends="YES" id="WwK-BX-pby"/>
                                         </connections>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2FK-Nd-CCB">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2FK-Nd-CCB">
                                         <rect key="frame" x="13" y="148" width="388" height="209"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <attributedString key="attributedText">
@@ -901,7 +955,7 @@
                                         <rect key="frame" x="25" y="61" width="364" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оформить заказ" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elY-Pg-CQk">
-                                                <rect key="frame" x="8" y="13.666666666666629" width="348" height="21"/>
+                                                <rect key="frame" x="8" y="13.5" width="348" height="21"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -940,7 +994,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wG-1s-V6C">
-                                        <rect key="frame" x="186" y="19.666666666666664" width="42" height="21"/>
+                                        <rect key="frame" x="186" y="19.5" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -990,7 +1044,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNE-ep-RAZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3476.811594202899" y="772.76785714285711"/>
+            <point key="canvasLocation" x="1807" y="895"/>
         </scene>
         <!--Custom Alert Controller-->
         <scene sceneID="vtH-TB-JUE">
@@ -1075,4 +1129,7 @@
         <image name="validPic" width="1744" height="1312"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GdZ-At-8Ax"/>
+    </inferredMetricsTieBreakers>
 </document>

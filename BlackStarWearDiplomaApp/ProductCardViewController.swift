@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProductCardViewControllerDelegate {
+    func passProductsCount(productCount: Int)
+}
+
 class ProductCardViewController: UIViewController {
     
     @IBOutlet weak var productImageView: UIImageView!
@@ -26,8 +30,8 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var blindView: UIView!
     @IBOutlet weak var redCircleOfItemsCount: UIView!
     
-    var productsCounter = RealmDataBase.shared.getSavedProducts().count // неплохо Шерлок, но когда в базе что-то удаляется, ты здесь об этом не знаешь. Скорее всего придется делать делегат или замыкание.
-    
+    var delegate: ProductCardViewControllerDelegate?
+    var productsCounter = RealmDataBase.shared.getSavedProducts().count
    
     var product = ProductsList()
     private var dataImages = [Data]()
@@ -113,6 +117,7 @@ class ProductCardViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
+        delegate?.passProductsCount(productCount: productsCounter)
         dismiss(animated: true, completion: nil)
     }
     
