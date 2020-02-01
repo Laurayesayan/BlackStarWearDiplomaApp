@@ -7,5 +7,6 @@ target 'BlackStarWearDiplomaApp' do
 
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'RealmSwift'
+  pod 'SVProgressHUD'
 
 end

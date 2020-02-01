@@ -17,20 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        CategoriesLoader().loadCategories { categories in
-//            self.categories = categories
-//            self.categoriesTableView.reloadData()
-//        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         CategoriesLoader().loadCategories { categories in
             self.categories = categories
             self.categoriesTableView.reloadData()
         }
     }
-
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
