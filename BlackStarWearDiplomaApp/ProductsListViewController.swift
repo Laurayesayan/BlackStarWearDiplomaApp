@@ -37,9 +37,6 @@ class ProductsListViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         delegate?.passProductsCount(productCount: productsCount)
     }
-//    override func viewWi(_ animated: Bool) {
-//        delegate?.passProductsCount(productCount: productsCount)
-//    }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         get {
@@ -56,6 +53,7 @@ class ProductsListViewController: UIViewController {
 extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, ProductCardViewControllerDelegate, BasketViewControllerDelegate {
 
     func getProductsCount(productCount: Int) {
+        self.productsCount = productCount
         basket.setProductCount(productCount: productCount)
     }
     

@@ -175,10 +175,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6l-aH-Mns" customClass="Basket" customModule="BlackStarWearDiplomaApp" customModuleProvider="target">
                                 <rect key="frame" x="169.5" y="794" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="C8h-t8-uC6"/>
                                     <constraint firstAttribute="width" secondItem="U6l-aH-Mns" secondAttribute="height" multiplier="1:1" id="ym7-rv-Olj"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sp7-ei-xYg" appends="YES" id="hYD-Sa-6vr"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -199,10 +203,15 @@
                         <outlet property="navigationItemTitle" destination="wud-Ao-Yzj" id="LZK-7m-6AU"/>
                         <outlet property="subcategoriesTableView" destination="LMd-z7-eA2" id="Lh2-ew-Due"/>
                         <segue destination="3G1-9x-C6d" kind="show" identifier="ShowProductsList" id="dtY-Ih-FB5"/>
-                        <segue destination="Zvp-aM-UhC" kind="show" id="FAo-gi-ljc"/>
+                        <segue destination="Zvp-aM-UhC" kind="presentation" identifier="FromSubcategoriesController" id="FAo-gi-ljc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yae-ge-vGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sp7-ei-xYg">
+                    <connections>
+                        <action selector="showBasket:" destination="zyu-5N-30M" id="U36-sY-8iu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="87.053571428571431"/>
         </scene>
@@ -1130,6 +1139,6 @@
         <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GdZ-At-8Ax"/>
+        <segue reference="FAo-gi-ljc"/>
     </inferredMetricsTieBreakers>
 </document>

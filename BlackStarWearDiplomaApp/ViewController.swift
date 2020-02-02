@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     var categories: [Categories] = []
     var selectedRow = Int()
+    var productsCount = RealmDataBase.shared.getSavedProducts().count
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,15 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketViewControllerDelegate {
-    func getProductsCount(productCount: Int) {
+extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketViewControllerDelegate, SubcategoriesViewControllerDelegate {
+    func passProductsCount(productCount: Int) {
+        self.productsCount = productCount
         basket.setProductCount(productCount: productCount)
     }
     
+    func getProductsCount(productCount: Int) {
+        basket.setProductCount(productCount: productCount)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categories.count
@@ -59,6 +64,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let subcategoriesController = segue.destination as? SubcategoriesViewController, segue.identifier == "ShowSubcategories" {
             subcategoriesController.subcategories = self.categories[selectedRow]
+            subcategoriesController.delegate = self
         }
         
         if let basketViewController = segue.destination as? BasketViewController, segue.identifier == "fromViewController" {

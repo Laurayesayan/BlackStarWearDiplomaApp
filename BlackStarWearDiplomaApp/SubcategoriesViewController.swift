@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SubcategoriesViewControllerDelegate {
+    func passProductsCount(productCount: Int)
+}
+
 class SubcategoriesViewController: UIViewController {
     
     var selectedID = String()
@@ -18,6 +22,7 @@ class SubcategoriesViewController: UIViewController {
     var productsCount = RealmDataBase.shared.getSavedProducts().count
     
     var subcategories = Categories()
+    var delegate: SubcategoriesViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +30,23 @@ class SubcategoriesViewController: UIViewController {
         basket.setProductCount(productCount: productsCount)
     }
     
+    @IBAction func showBasket(_ sender: Any) {
+        performSegue(withIdentifier: "FromSubcategoriesController", sender: self.basket)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.passProductsCount(productCount: productsCount)
+    }
 }
 
 extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSource, BasketViewControllerDelegate, ProductsListViewControllerDelegate {
     func passProductsCount(productCount: Int) {
+        self.productsCount = productCount
         basket.setProductCount(productCount: productCount)
     }
     
     func getProductsCount(productCount: Int) {
+        self.productsCount = productCount
         basket.setProductCount(productCount: productCount)
     }
     
@@ -63,6 +77,10 @@ extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSourc
         if let productsController = segue.destination as? ProductsListViewController, segue.identifier == "ShowProductsList" {
             productsController.id = self.selectedID
             productsController.delegate = self
+        }
+        
+        if let basketView = segue.destination as? BasketViewController, segue.identifier == "FromSubcategoriesController" {
+            basketView.delegate = self
         }
     }
     
