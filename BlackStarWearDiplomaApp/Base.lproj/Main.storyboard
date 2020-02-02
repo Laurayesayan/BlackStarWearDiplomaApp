@@ -449,7 +449,10 @@
                                             <constraint firstAttribute="width" constant="25" id="KFK-9r-iSH"/>
                                             <constraint firstAttribute="height" constant="18" id="Rjc-fB-NFh"/>
                                         </constraints>
-                                        <state key="normal" image="GrayBackArrow"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="arrow.left" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        </state>
                                         <connections>
                                             <action selector="backButton:" destination="zbt-0s-Ai1" eventType="touchUpInside" id="Iza-fc-S3V"/>
                                         </connections>
@@ -629,8 +632,23 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-ze-Nky">
                                 <rect key="frame" x="0.0" y="44" width="414" height="625"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DwB-hn-48D">
+                                        <rect key="frame" x="157" y="253" width="100" height="118"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="0.44980736301369861" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DwB-hn-48D" secondAttribute="height" multiplier="5:6" id="3SM-Vf-i2I"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="DwB-hn-48D" firstAttribute="leading" secondItem="YK3-ze-Nky" secondAttribute="leading" constant="157" id="KgJ-J0-882"/>
+                                    <constraint firstItem="DwB-hn-48D" firstAttribute="top" secondItem="YK3-ze-Nky" secondAttribute="top" constant="252" id="QcS-tO-oZp"/>
+                                    <constraint firstAttribute="bottom" secondItem="DwB-hn-48D" secondAttribute="bottom" constant="253" id="SBP-b3-ipe"/>
+                                    <constraint firstAttribute="trailing" secondItem="DwB-hn-48D" secondAttribute="trailing" constant="157" id="V8X-NL-eEI"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="DaS-L1-oaM" appends="YES" id="nDK-eC-dKd"/>
                                 </connections>
@@ -659,6 +677,7 @@
                         <outlet property="blindView" destination="YK3-ze-Nky" id="0yI-l4-s4o"/>
                         <outlet property="buttonTextLabel" destination="Wfl-jQ-Qcq" id="dsS-W7-8vq"/>
                         <outlet property="buttonView" destination="ZTR-md-acX" id="RSH-L7-V5r"/>
+                        <outlet property="hintArrow" destination="DwB-hn-48D" id="owQ-RR-Fnv"/>
                         <outlet property="itemsInBuscketLabel" destination="doC-a0-axK" id="JpQ-G7-faT"/>
                         <outlet property="priceLabel" destination="hQ6-uw-Mid" id="ahZ-yM-g6h"/>
                         <outlet property="productImageView" destination="13h-rN-OYr" id="4yt-Nh-gwm"/>
@@ -761,7 +780,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="6SV-Ko-0pr" firstAttribute="top" secondItem="lm9-VW-9Qp" secondAttribute="top" constant="16" id="05q-y9-gke"/>
-                                                        <constraint firstAttribute="trailing" secondItem="6SV-Ko-0pr" secondAttribute="trailing" constant="16" id="3I7-hE-Ctv"/>
+                                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6SV-Ko-0pr" secondAttribute="trailing" constant="16" id="3I7-hE-Ctv"/>
                                                         <constraint firstItem="XBZ-Pr-5AQ" firstAttribute="leading" secondItem="lm9-VW-9Qp" secondAttribute="leading" constant="16" id="7P2-oo-Gi3"/>
                                                         <constraint firstItem="6SV-Ko-0pr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="XBZ-Pr-5AQ" secondAttribute="trailing" constant="62" id="9ju-fo-H1j"/>
                                                         <constraint firstAttribute="bottom" secondItem="XBZ-Pr-5AQ" secondAttribute="bottom" constant="18" id="VHd-2c-K7V"/>
@@ -1132,13 +1151,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GrayBackArrow" width="1522" height="1092"/>
+        <image name="arrow.down" catalog="system" width="60" height="64"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="gray basket" width="1746" height="1498"/>
         <image name="trash" catalog="system" width="60" height="64"/>
         <image name="validPic" width="1744" height="1312"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FAo-gi-ljc"/>
+        <segue reference="PNA-Lf-d82"/>
     </inferredMetricsTieBreakers>
 </document>

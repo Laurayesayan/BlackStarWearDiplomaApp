@@ -90,7 +90,7 @@ class BasketViewController: UIViewController {
         totalAmountLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         totalAmountLabel.font = UIFont(name: "SFProDisplay-Medium", size: 16)
         totalAmountLabel.textAlignment = .right
-        totalAmountLabel.attributedText = NSMutableAttributedString(string: "2500 руб.", attributes: [NSAttributedString.Key.kern: 0.19])
+        totalAmountLabel.attributedText = NSMutableAttributedString(string: "0.0 руб.", attributes: [NSAttributedString.Key.kern: 0.19])
     }
     
     @IBAction func closeBasketView(_ sender: Any) {
@@ -98,44 +98,9 @@ class BasketViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //    @IBAction func deleteProduct(_ sender: Any) {
-//        basketTableView.isEditing = !basketTableView.isEditing
-//        if let selectedRows = basketTableView.indexPathsForSelectedRows {
-//            for indexPath in selectedRows {
-//                print(indexPath)
-//                RealmDataBase.shared.deleteProduct(id: productsInBusket[indexPath.row].offers[0].productOfferID)
-//            }
-//
-////            RealmDataBase.shared.deleteProduct(id: productsInBusket[selectedRows)
-//
-//
-////            var items: [String] = []
-////            for indexPath in selectedRows  {
-////                items.append(tasksList[indexPath.row])
-////            }
-//
-////            for item in items {
-////                if let index = tasksList.firstIndex(of: item) {
-////                    removeTask(task: tasksList[index])
-////                    tasksList.remove(at: index)
-////                }
-////            }
-//
-//            basketTableView.beginUpdates()
-//            basketTableView.deleteRows(at: selectedRows, with: .automatic)
-//            basketTableView.endUpdates()
-//        }
-//
-//        updateProductsInBusket()
-//        calculateTotalAmount()
-//
-//
-////        updateTasksList()
-//
-//    }
-    
     func calculateTotalAmount() {
         var totalAmount = 0.0
+        self.totalAmountLabel.text = "\(totalAmount)"
         for i in 0..<productsInBusket.count {
             totalAmount += round(Double(productsInBusket[i].price) ?? 0)
             self.totalAmountLabel.text = "\(totalAmount)"

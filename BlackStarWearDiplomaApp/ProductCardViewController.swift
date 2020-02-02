@@ -29,6 +29,8 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var sizeAndColorView: UIView!
     @IBOutlet weak var blindView: UIView!
     @IBOutlet weak var redCircleOfItemsCount: UIView!
+    @IBOutlet weak var hintArrow: UIImageView!
+    
     
     var delegate: ProductCardViewControllerDelegate?
     var productsCounter = RealmDataBase.shared.getSavedProducts().count
@@ -74,7 +76,12 @@ class ProductCardViewController: UIViewController {
         productImagesPageControl.numberOfPages = dataImages.count
         productImageView.image = UIImage(data: dataImages[currentImageIndex])
         
-        textView.text = product.description
+        if !product.description.isEmpty {
+            textView.text = product.description
+        } else {
+            textView.text = "Описание товара отсутвует."
+        }
+        
         
         basketProductsCount.layer.cornerRadius = basketProductsCount.frame.size.width / 2
         
@@ -84,8 +91,17 @@ class ProductCardViewController: UIViewController {
         sizeAndColorView.isHidden = true
         
         blindView.isHidden = true
+        hintArrow.isHidden = true
         
-        itemsInBuscketLabel.text = "\(productsCounter)"
+        if productsCounter > 0 {
+            itemsInBuscketLabel.isHidden = false
+            redCircleOfItemsCount.isHidden = false
+            itemsInBuscketLabel.text = "\(productsCounter)"
+        } else {
+            itemsInBuscketLabel.isHidden = true
+            redCircleOfItemsCount.isHidden = true
+        }
+
     }
     
     func convertURLImageToData(URLImages: [String]) {
@@ -186,7 +202,28 @@ class ProductCardViewController: UIViewController {
 extension ProductCardViewController: SizeAndColorViewControllerDelegate, BasketViewControllerDelegate {
     func getProductsCount(productCount: Int) {
         productsCounter = productCount
-        itemsInBuscketLabel.text = "\(productsCounter)"
+        if productCount > 0 {
+            redCircleOfItemsCount.isHidden = false
+            itemsInBuscketLabel.isHidden = false
+            itemsInBuscketLabel.text = "\(productsCounter)"
+        } else {
+            redCircleOfItemsCount.isHidden = true
+            itemsInBuscketLabel.isHidden = true
+        }
+    }
+    
+    func animatedShowHintArrow() {
+        self.hintArrow.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.hintArrow.tintColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        }
+        
+        UIView.animate(withDuration: 1.7, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: [.curveEaseIn, .curveEaseOut], animations: {
+            self.hintArrow.frame.origin.y += self.hintArrow.frame.height
+        }) { (Bool) in
+            self.hintArrow.isHidden = true
+            self.hintArrow.frame.origin.y -= self.hintArrow.frame.height
+        }
     }
     
     func getChosenSize(_ size: ProductsList.Offers) {
@@ -194,5 +231,6 @@ extension ProductCardViewController: SizeAndColorViewControllerDelegate, BasketV
         isSelected = true
         productsCounter += 1
         itemsInBuscketLabel.text = "\(productsCounter)"
+        animatedShowHintArrow()
     }
 }
