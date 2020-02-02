@@ -646,7 +646,6 @@
                                 <constraints>
                                     <constraint firstItem="DwB-hn-48D" firstAttribute="leading" secondItem="YK3-ze-Nky" secondAttribute="leading" constant="157" id="KgJ-J0-882"/>
                                     <constraint firstItem="DwB-hn-48D" firstAttribute="top" secondItem="YK3-ze-Nky" secondAttribute="top" constant="252" id="QcS-tO-oZp"/>
-                                    <constraint firstAttribute="bottom" secondItem="DwB-hn-48D" secondAttribute="bottom" constant="253" id="SBP-b3-ipe"/>
                                     <constraint firstAttribute="trailing" secondItem="DwB-hn-48D" secondAttribute="trailing" constant="157" id="V8X-NL-eEI"/>
                                 </constraints>
                                 <connections>
