@@ -214,15 +214,17 @@ extension ProductCardViewController: SizeAndColorViewControllerDelegate, BasketV
     
     func animatedShowHintArrow() {
         self.hintArrow.isHidden = false
+        self.sizeAndColorView.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.3) {
             self.hintArrow.tintColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         }
         
-        UIView.animate(withDuration: 1.7, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: [.curveEaseIn, .curveEaseOut], animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: [.curveEaseIn, .curveEaseOut], animations: {
             self.hintArrow.frame.origin.y += self.hintArrow.frame.height
         }) { (Bool) in
             self.hintArrow.isHidden = true
             self.hintArrow.frame.origin.y -= self.hintArrow.frame.height
+            self.sizeAndColorView.isUserInteractionEnabled = true
         }
     }
     
