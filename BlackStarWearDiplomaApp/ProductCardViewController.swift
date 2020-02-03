@@ -180,6 +180,8 @@ class ProductCardViewController: UIViewController {
         self.blindView.isHidden = true
         
         if isSelected {
+            productsCounter += 1
+            itemsInBuscketLabel.text = "\(productsCounter)"
             animateItemsCount()
             performSegue(withIdentifier: "ShowBasketView", sender:itemsInBuscketLabel)
         }
@@ -231,8 +233,6 @@ extension ProductCardViewController: SizeAndColorViewControllerDelegate, BasketV
     func getChosenSize(_ size: ProductsList.Offers) {
         self.chosenSize = size
         isSelected = true
-        productsCounter += 1
-        itemsInBuscketLabel.text = "\(productsCounter)"
         animatedShowHintArrow()
     }
 }
