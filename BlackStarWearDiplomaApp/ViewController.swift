@@ -53,10 +53,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketView
         
         cell.titleLabel.text = categories[indexPath.row].name
         
-        let url = URL(string: "http://blackstarshop.ru/\(categories[indexPath.row].iconImage)")
-             
-        let data = try? Data(contentsOf: url!)
-        cell.categoriesImage.image = UIImage(data: data!)
+        cell.categoriesImage.setImage(url: "http://blackstarshop.ru/\(categories[indexPath.row].iconImage)")
         
         return cell
     }
@@ -78,4 +75,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketView
         performSegue(withIdentifier: "ShowSubcategories", sender: indexPath)
     }
     
+}
+
+extension UIImageView {
+    func setImage(url: String) {
+        guard let imageURL = URL(string: url) else { return }
+
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
+    }
 }
