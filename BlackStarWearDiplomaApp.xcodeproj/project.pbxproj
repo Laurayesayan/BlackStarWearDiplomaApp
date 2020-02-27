@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B79E35614A0B475996DFB55A /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */; };
+		F703C01A24083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F703C01924083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework */; };
+		F703C01B24083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F703C01924083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F73D6D1E23BE2942004D80FD /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */; };
 		F73D6D2023BE323C004D80FD /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */; };
 		F771D32323B9DC1900D5185F /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771D32223B9DC1900D5185F /* SubcategoriesViewController.swift */; };
@@ -30,10 +31,26 @@
 		F7CB08E723E5E1B0002535B0 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB08E623E5E1B0002535B0 /* Basket.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F703C018240839CA004364F9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F703C01B24083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWearDiplomaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C1B5E8E0F53A3818073E24 /* Pods-BlackStarWearDiplomaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWearDiplomaApp.debug.xcconfig"; path = "Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AD3DC5546B2CFCCB8BBD1D43 /* Pods-BlackStarWearDiplomaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWearDiplomaApp.release.xcconfig"; path = "Target Support Files/Pods-BlackStarWearDiplomaApp/Pods-BlackStarWearDiplomaApp.release.xcconfig"; sourceTree = "<group>"; };
+		F703C015240839CA004364F9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F703C01924083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_BlackStarWearDiplomaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
 		F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F771D32223B9DC1900D5185F /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B79E35614A0B475996DFB55A /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */,
+				F703C01A24083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +90,8 @@
 		1B8E898891E76DA6932D3A0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F703C01924083A03004364F9 /* Pods_BlackStarWearDiplomaApp.framework */,
+				F703C015240839CA004364F9 /* Alamofire.framework */,
 				21F13306C736B1B0DDE5E898 /* Pods_BlackStarWearDiplomaApp.framework */,
 			);
 			name = Frameworks;
@@ -145,6 +164,7 @@
 				F7B89F8923B6986400F3F87F /* Frameworks */,
 				F7B89F8A23B6986400F3F87F /* Resources */,
 				B6BD9894DB1F58C25BA70C4F /* [CP] Embed Pods Frameworks */,
+				F703C018240839CA004364F9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

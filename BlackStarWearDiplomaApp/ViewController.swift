@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -52,8 +53,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketView
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell") as! CategoriesTableViewCell
         
         cell.titleLabel.text = categories[indexPath.row].name
-        
-        cell.categoriesImage.setImage(url: "http://blackstarshop.ru/\(categories[indexPath.row].iconImage)")
+        let url = URL(string: "http://blackstarshop.ru/\(categories[indexPath.row].iconImage)")
+        cell.categoriesImage.kf.setImage(with: url)
         
         return cell
     }
@@ -77,17 +78,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, BasketView
     
 }
 
-extension UIImageView {
-    func setImage(url: String) {
-        guard let imageURL = URL(string: url) else { return }
-
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-
-            let image = UIImage(data: imageData)
-            DispatchQueue.main.async {
-                self.image = image
-            }
-        }
-    }
-}
+//extension UIImageView {
+//    func setImage(url: String) {
+//        guard let imageURL = URL(string: url) else { return }
+//
+//        DispatchQueue.global().async {
+//            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+//
+//            let image = UIImage(data: imageData)
+//            DispatchQueue.main.async {
+//                self.image = image
+//            }
+//        }
+//    }
+//}

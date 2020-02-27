@@ -78,7 +78,8 @@ extension ProductsListViewController: UICollectionViewDelegateFlowLayout, UIColl
         cell.descriptionLabel.text = productsList[indexPath.row].description
         cell.priceLabel.text = "\(round(Double(productsList[indexPath.row].price) ?? 0))"
         
-        cell.productImage.setImage(url: "http://blackstarshop.ru/\(productsList[indexPath.row].mainImage)")
+        let url = URL(string: "http://blackstarshop.ru/\(productsList[indexPath.row].mainImage)")
+        cell.productImage.kf.setImage(with: url)
         
         return cell
     }

@@ -62,7 +62,8 @@ extension SubcategoriesViewController: UITableViewDelegate, UITableViewDataSourc
         self.navigationItemTitle.title = self.subcategories.name
             
         if !self.subcategories.subcategories[indexPath.row].iconImage.isEmpty {
-            cell.subcategoriesImageView.setImage(url: "http://blackstarshop.ru/\(self.subcategories.subcategories[indexPath.row].iconImage)")
+            let url = URL(string: "http://blackstarshop.ru/\(self.subcategories.subcategories[indexPath.row].iconImage)")
+            cell.subcategoriesImageView.kf.setImage(with: url)
         } else {
             cell.subcategoriesImageView.image = UIImage(named: "NON")
         }
