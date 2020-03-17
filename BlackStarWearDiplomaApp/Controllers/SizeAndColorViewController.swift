@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SizeAndColorViewControllerDelegate {
+protocol SizeAndColorViewControllerDelegate: class {
     func getChosenSize(_ size: ProductsList.Offers)
 }
 
@@ -16,7 +16,7 @@ class SizeAndColorViewController: UIViewController {
     @IBOutlet weak var sizeAndColorTableView: UITableView!
     var selectedRow = -1
     var productInfo = ProductsList()
-    var delegate: SizeAndColorViewControllerDelegate?
+    weak var delegate: SizeAndColorViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

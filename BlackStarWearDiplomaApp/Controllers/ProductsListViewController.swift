@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ProductsListViewControllerDelegate {
+protocol ProductsListViewControllerDelegate: class {
     func passProductsCount(productCount: Int)
 }
 
@@ -22,7 +22,7 @@ class ProductsListViewController: UIViewController {
     var index = Int()
     var productsList: [ProductsList] = []
     var productsCount = RealmDataBase.shared.getSavedProducts().count
-    var delegate: ProductsListViewControllerDelegate?
+    weak var delegate: ProductsListViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

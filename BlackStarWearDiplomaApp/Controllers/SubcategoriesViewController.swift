@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SubcategoriesViewControllerDelegate {
+protocol SubcategoriesViewControllerDelegate: class {
     func passProductsCount(productCount: Int)
 }
 
@@ -22,7 +22,7 @@ class SubcategoriesViewController: UIViewController {
     var productsCount = RealmDataBase.shared.getSavedProducts().count
     
     var subcategories = Categories()
-    var delegate: SubcategoriesViewControllerDelegate?
+    weak var delegate: SubcategoriesViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

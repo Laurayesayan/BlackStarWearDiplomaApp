@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BasketViewControllerDelegate {
+protocol BasketViewControllerDelegate: class {
     func getProductsCount(productCount: Int)
 }
 
@@ -22,7 +22,7 @@ class BasketViewController: UIViewController {
     
     var productsInBusket = [ProductsList]()
     var product = ProductsList()
-    var delegate: BasketViewControllerDelegate?
+    weak var delegate: BasketViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,14 +131,14 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.priceLabel.attributedText = NSMutableAttributedString(string: "\(round(Double(productsInBusket[indexPath.row].price) ?? 0))", attributes: [NSAttributedString.Key.kern: 0.18])
         
-        cell.buttonPressed = {
+        cell.buttonPressed = { [weak self] in
             let customAlertInstantiator = CustomAlertInstantiator()
             
             let yesButton = AlertButton(title: "ДА", action: {
-                RealmDataBase.shared.deleteProduct(id: self.productsInBusket[indexPath.row].offers[0].productOfferID)
-                self.updateProductsInBusket()
-                self.calculateTotalAmount()
-                self.basketTableView.reloadData()
+                RealmDataBase.shared.deleteProduct(id: self!.productsInBusket[indexPath.row].offers[0].productOfferID)
+                self!.updateProductsInBusket()
+                self!.calculateTotalAmount()
+                self!.basketTableView.reloadData()
             }, titleColor: UIColor.white, backgroundColor: #colorLiteral(red: 0, green: 0.4780656695, blue: 0.9984853864, alpha: 1), cornerRadius: 8)
             
             let noButton = AlertButton(title: " НЕТ", action: {
@@ -147,7 +147,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             
             let alert = AlertPayload(message: "Удалить товар из корзины?", messageColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), buttons: [yesButton, noButton])
 
-            customAlertInstantiator.showAlert(payload: alert, parentViewController: self)
+            customAlertInstantiator.showAlert(payload: alert, parentViewController: self!)
         }
         
         return cell

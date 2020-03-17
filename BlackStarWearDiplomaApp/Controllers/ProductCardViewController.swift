@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ProductCardViewControllerDelegate {
+protocol ProductCardViewControllerDelegate: class {
     func passProductsCount(productCount: Int)
 }
 
@@ -32,7 +32,7 @@ class ProductCardViewController: UIViewController {
     @IBOutlet weak var hintArrow: UIImageView!
     
     
-    var delegate: ProductCardViewControllerDelegate?
+    weak var delegate: ProductCardViewControllerDelegate?
     var productsCounter = RealmDataBase.shared.getSavedProducts().count
    
     var product = ProductsList()
@@ -162,8 +162,8 @@ class ProductCardViewController: UIViewController {
         self.sizeAndColorView.isHidden = false
         self.blindView.isHidden = false
         self.sizeAndColorViewTopConstraint.constant = 18
-        UIView.animate(withDuration: 0.45, delay: 0.0, options: .curveEaseOut, animations: {
-            self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.45, delay: 0.0, options: .curveEaseOut, animations: { [weak self] in
+            self!.view.layoutIfNeeded()
         }) { (True) in
         }
 
@@ -171,10 +171,10 @@ class ProductCardViewController: UIViewController {
     
     @IBAction func hideSizeAndColorViewGesture(_ sender: Any) {
         self.sizeAndColorViewTopConstraint.constant = self.view.frame.size.width
-        UIView.animate(withDuration: 0.45, delay: 0.0, options: .curveEaseOut, animations: {
-            self.view.layoutIfNeeded()
-        }) { (True) in
-            self.sizeAndColorView.isHidden = true
+        UIView.animate(withDuration: 0.45, delay: 0.0, options: .curveEaseOut, animations: { [weak self] in
+            self!.view.layoutIfNeeded()
+        }) { [weak self] (True) in
+            self!.sizeAndColorView.isHidden = true
         }
         
         self.blindView.isHidden = true
@@ -188,12 +188,12 @@ class ProductCardViewController: UIViewController {
     }
     
     func animateItemsCount() {
-        UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: .curveEaseIn, animations: {
-            var frame = self.redCircleOfItemsCount.frame
-            self.redCircleOfItemsCount.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width * 2, height: frame.size.height * 2)
+        UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: .curveEaseIn, animations: { [weak self] in
+            var frame = self!.redCircleOfItemsCount.frame
+            self!.redCircleOfItemsCount.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width * 2, height: frame.size.height * 2)
             
-            frame = self.itemsInBuscketLabel.frame
-            self.itemsInBuscketLabel.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width * 2, height: frame.size.height * 2)
+            frame = self!.itemsInBuscketLabel.frame
+            self!.itemsInBuscketLabel.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width * 2, height: frame.size.height * 2)
         }) { (True) in
             
         }
@@ -217,16 +217,16 @@ extension ProductCardViewController: SizeAndColorViewControllerDelegate, BasketV
     func animatedShowHintArrow() {
         self.hintArrow.isHidden = false
         self.sizeAndColorView.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.3) {
-            self.hintArrow.tintColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.hintArrow.tintColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         }
         
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: [.curveEaseIn, .curveEaseOut], animations: {
-            self.hintArrow.frame.origin.y += self.hintArrow.frame.height
-        }) { (Bool) in
-            self.hintArrow.isHidden = true
-            self.hintArrow.frame.origin.y -= self.hintArrow.frame.height
-            self.sizeAndColorView.isUserInteractionEnabled = true
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.7, options: [.curveEaseIn, .curveEaseOut], animations: { [weak self] in
+            self?.hintArrow.frame.origin.y += (self?.hintArrow.frame.height)!
+        }) { [weak self] (Bool) in
+            self?.hintArrow.isHidden = true
+            self?.hintArrow.frame.origin.y -= (self?.hintArrow.frame.height)!
+            self?.sizeAndColorView.isUserInteractionEnabled = true
         }
     }
     

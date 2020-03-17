@@ -106,6 +106,61 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F79CEDAF2420A9FA00556B50 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7CB08DB23DCC09B002535B0 /* BasketViewController.swift */,
+				F7CB08E123E358D8002535B0 /* CustomAlertController.swift */,
+				F7B9488823C2283200543526 /* ProductCardViewController.swift */,
+				F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */,
+				F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */,
+				F771D32223B9DC1900D5185F /* SubcategoriesViewController.swift */,
+				F7B89F9323B6986400F3F87F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F79CEDB02420AA4400556B50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7CB08E623E5E1B0002535B0 /* Basket.swift */,
+				F7CB08DF23DDDDFA002535B0 /* DataBase.swift */,
+				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F79CEDB12420AA8B00556B50 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7B89F8F23B6986400F3F87F /* AppDelegate.swift */,
+				F7B89F9823B6986B00F3F87F /* Assets.xcassets */,
+				F7B89F9123B6986400F3F87F /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F79CEDB22420AB0300556B50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7B89F9A23B6986B00F3F87F /* LaunchScreen.storyboard */,
+				F7B89F9523B6986400F3F87F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F79CEDB32420AB2100556B50 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */,
+				F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */,
+				F7B89FA723B739B800F3F87F /* CategoriesTableViewCell.swift */,
+				F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */,
+				F771D32423B9E32600D5185F /* SubcategoriesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F7B89F8323B6986400F3F87F = {
 			isa = PBXGroup;
 			children = (
@@ -127,27 +182,12 @@
 		F7B89F8E23B6986400F3F87F /* BlackStarWearDiplomaApp */ = {
 			isa = PBXGroup;
 			children = (
-				F7B89F8F23B6986400F3F87F /* AppDelegate.swift */,
-				F7B89F9123B6986400F3F87F /* SceneDelegate.swift */,
-				F7B89F9323B6986400F3F87F /* ViewController.swift */,
-				F771D32223B9DC1900D5185F /* SubcategoriesViewController.swift */,
-				F7B89FA323B69D2400F3F87F /* CategoriesLoader.swift */,
-				F7CB08DF23DDDDFA002535B0 /* DataBase.swift */,
-				F7B89FA523B69D7A00F3F87F /* JSONStructure.swift */,
-				F7B89F9523B6986400F3F87F /* Main.storyboard */,
-				F7CB08E623E5E1B0002535B0 /* Basket.swift */,
-				F7CB08E123E358D8002535B0 /* CustomAlertController.swift */,
-				F7CB08D923DA36A7002535B0 /* SizeAndColorViewController.swift */,
-				F7CB08DB23DCC09B002535B0 /* BasketViewController.swift */,
-				F7CB08DD23DCDAE7002535B0 /* BasketTableViewCell.swift */,
-				F73D6D1F23BE323C004D80FD /* ProductsCollectionViewCell.swift */,
-				F73D6D1D23BE2942004D80FD /* ProductsListViewController.swift */,
-				F7B9488823C2283200543526 /* ProductCardViewController.swift */,
-				F771D32423B9E32600D5185F /* SubcategoriesTableViewCell.swift */,
-				F7B89FA723B739B800F3F87F /* CategoriesTableViewCell.swift */,
-				F7B89F9823B6986B00F3F87F /* Assets.xcassets */,
-				F7B89F9A23B6986B00F3F87F /* LaunchScreen.storyboard */,
 				F7B89F9D23B6986B00F3F87F /* Info.plist */,
+				F79CEDB32420AB2100556B50 /* Cells */,
+				F79CEDAF2420A9FA00556B50 /* Controllers */,
+				F79CEDB02420AA4400556B50 /* Models */,
+				F79CEDB12420AA8B00556B50 /* Resources */,
+				F79CEDB22420AB0300556B50 /* View */,
 			);
 			path = BlackStarWearDiplomaApp;
 			sourceTree = "<group>";
